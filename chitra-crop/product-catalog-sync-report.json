@@ -1,0 +1,700 @@
+{
+  "excelPath": "c:/Users/bansa/Downloads/chitracropscience.in/public_html_BACKUP_20260618_184057/images/Chitra_Crop_Science_Product_Catalog.xlsx",
+  "catalogPath": "c:/Users/bansa/Downloads/chitracropscience.in/chitra-crop/src/data/product-catalog.json",
+  "sourceRowCount": 137,
+  "catalogRecordCount": 148,
+  "sourceProductsProcessed": 135,
+  "catalogRecordsUpdated": 136,
+  "unmatchedSourceProducts": [
+    "CHITRA THIOCAL",
+    "CHITRA KTS"
+  ],
+  "untouchedCatalogProducts": [
+    "Azotech",
+    "AZTRIX",
+    "CCS-CARB ULTRA",
+    "CCS-NEEM100",
+    "CHITHEXA",
+    "CHITRA NPK",
+    "CHITRA SARTHI",
+    "QUIZFOP-10 (Herbicide listing)",
+    "SUPER STORAGE"
+  ],
+  "matchedSourceProducts": [
+    {
+      "sourceName": "CCS-NEEM 100",
+      "matchedTo": "CCS-NEEM 100",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "HUKUMAT",
+      "matchedTo": "HUKUMAT",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "PLATINUM-5",
+      "matchedTo": "PLATINUM-5",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "ATTACK-505",
+      "matchedTo": "ATTACK-505",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "LASKAR",
+      "matchedTo": "LASKAR",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "NOVA-404",
+      "matchedTo": "NOVA-404",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "BHISMA GOLD",
+      "matchedTo": "BHISMA GOLD",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "ATTACK-20",
+      "matchedTo": "ATTACK-20",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITGOR",
+      "matchedTo": "CHITGOR",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "BENZO FIRE",
+      "matchedTo": "BENZO FIRE",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CRETA SUPER",
+      "matchedTo": "CRETA SUPER",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "C-IMIDA",
+      "matchedTo": "C-IMIDA",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "C-IMIDA SUPER",
+      "matchedTo": "C-IMIDA SUPER",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "AGNEEPATH SC",
+      "matchedTo": "AGNEEPATH SC",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITARA",
+      "matchedTo": "CHITARA",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "BENZO KILL",
+      "matchedTo": "BENZO KILL",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "MONOSIL",
+      "matchedTo": "MONOSIL",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "AGNEEPATH GR",
+      "matchedTo": "AGNEEPATH GR",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "FEURADON-3G",
+      "matchedTo": "FEURADON-3G",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "FIMIDA-40",
+      "matchedTo": "FIMIDA-40",
+      "recordsUpdated": 2
+    },
+    {
+      "sourceName": "FENDOL-DP",
+      "matchedTo": "FENDOL-DP",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "ATTACK-10 G",
+      "matchedTo": "ATTACK-10 G",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "Dualstrike GR",
+      "matchedTo": "DUALSTRIKE GR",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHIT PRIDE",
+      "matchedTo": "CHIT PRIDE",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "ABACHIT",
+      "matchedTo": "ABACHIT",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITWEED",
+      "matchedTo": "CHITWEED",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "PRIDEZOLE",
+      "matchedTo": "PRIDEZOLE",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "Aakraman",
+      "matchedTo": "AAKRAMAN",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "QUEENPHOS",
+      "matchedTo": "QUEENPHOS",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA PYRAD",
+      "matchedTo": "CHITRA PYRAD",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "ATTACK-50",
+      "matchedTo": "ATTACK-50",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "BENZO NIL",
+      "matchedTo": "BENZO NIL",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "MORPHIS",
+      "matchedTo": "MORPHIS",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHIT FIGHTER",
+      "matchedTo": "CHIT FIGHTER",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "PRIDEZOLE (Seed Treatment)",
+      "matchedTo": "PRIDEZOLE (SEED TREATMENT)",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITARA GOLD",
+      "matchedTo": "CHITARA GOLD",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "KILL-LARVA",
+      "matchedTo": "KILL-LARVA",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CYQ-320",
+      "matchedTo": "CYQ-320",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "HARIYALI SULF-80 (Insecticide)",
+      "matchedTo": "HARIYALI SULF-80 (INSECTICIDE)",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CYMO PLUS",
+      "matchedTo": "CYMO PLUS",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "KRANTIKARI",
+      "matchedTo": "KRANTIKARI",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "JORAWAR",
+      "matchedTo": "JORAWAR",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "SHAKTIMAN",
+      "matchedTo": "SHAKTIMAN",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "PRO-VALIDA",
+      "matchedTo": "PRO-VALIDA",
+      "recordsUpdated": 2
+    },
+    {
+      "sourceName": "VANDAN",
+      "matchedTo": "VANDAN",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "TEBU SF",
+      "matchedTo": "TEBU SF",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA M-45",
+      "matchedTo": "CHITRA M-45",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "VITARA GOLD",
+      "matchedTo": "VITARA GOLD",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA-COC",
+      "matchedTo": "CHITRA-COC",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "FUNGASTIN",
+      "matchedTo": "FUNGASTIN",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "MR. THANKS",
+      "matchedTo": "MR. THANKS",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "KARGIL-75",
+      "matchedTo": "KARGIL-75",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "METMAX",
+      "matchedTo": "METMAX",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "SEED MAX PRO",
+      "matchedTo": "SEED MAX PRO",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA DEFEND",
+      "matchedTo": "CHITRA DEFEND",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CAPHEXA",
+      "matchedTo": "CAPHEXA",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRACOL",
+      "matchedTo": "CHITRACOL",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "SAFE COVER",
+      "matchedTo": "SAFE COVER",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITHEXA GOLD",
+      "matchedTo": "CHITHEXA GOLD",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "HARIYALI SULF-80 (Fungicide)",
+      "matchedTo": "HARIYALI SULF-80 (FUNGICIDE)",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "TEBU TRY",
+      "matchedTo": "TEBU TRY",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "AZOTRI PLUS",
+      "matchedTo": "AZOTRI PLUS",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHIT HEXA",
+      "matchedTo": "CHIT HEXA",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "SEED MAX",
+      "matchedTo": "SEED MAX",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "TEBZOLE",
+      "matchedTo": "TEBZOLE",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "HIT-WICKET",
+      "matchedTo": "HIT-WICKET",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "KILL-41",
+      "matchedTo": "KILL-41",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "PENDI-STOP",
+      "matchedTo": "PENDI-STOP",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "KILL-71",
+      "matchedTo": "KILL-71",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRAZINE",
+      "matchedTo": "CHITRAZINE",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHIT-OXY",
+      "matchedTo": "CHIT-OXY",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "QUIZFOP-10",
+      "matchedTo": "QUIZFOP-10",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "BATALIYAN",
+      "matchedTo": "BATALIYAN",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITWEED SUPER",
+      "matchedTo": "CHITWEED SUPER",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "JODIDAR",
+      "matchedTo": "JODIDAR",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "PENDI-STOP EXTRA",
+      "matchedTo": "PENDI-STOP EXTRA",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITMIZA",
+      "matchedTo": "CHITMIZA",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "SULFO-ON",
+      "matchedTo": "SULFO-ON",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "TEMBA",
+      "matchedTo": "TEMBA",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITMIZA-10",
+      "matchedTo": "CHITMIZA-10",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "BHAGAO",
+      "matchedTo": "BHAGAO",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA MSM",
+      "matchedTo": "CHITRA MSM",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "ACTIVE 100",
+      "matchedTo": "ACTIVE 100",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "HARIYALI GOLD PLUS",
+      "matchedTo": "HARIYALI GOLD PLUS",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "SUPPORTER",
+      "matchedTo": "SUPPORTER",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "HAMLAVAR",
+      "matchedTo": "HAMLAVAR",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "FLOWER PLUS",
+      "matchedTo": "FLOWER PLUS",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CCS-303",
+      "matchedTo": "CCS-303",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CCS-CARB",
+      "matchedTo": "CCS-CARB",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "MULTI POWER 55",
+      "matchedTo": "MULTI POWER 55",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "FLO-JEET",
+      "matchedTo": "FLO-JEET",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "WELCOME HONEY BEE",
+      "matchedTo": "WELCOME HONEY BEE",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "STORAGE",
+      "matchedTo": "STORAGE",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "AMITRA 80",
+      "matchedTo": "AMITRA 80",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHIT BRIGHT",
+      "matchedTo": "CHIT BRIGHT",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "DHARTI RATAN",
+      "matchedTo": "DHARTI RATAN",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "ROOT RATAN",
+      "matchedTo": "ROOT RATAN",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "Dr. ROOT RAJA",
+      "matchedTo": "DR. ROOT RAJA",
+      "recordsUpdated": 2
+    },
+    {
+      "sourceName": "ROOT RAJA",
+      "matchedTo": "ROOT RAJA",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CRAGIBB",
+      "matchedTo": "CRAGIBB",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "FLO-AVTAR",
+      "matchedTo": "FLO-AVTAR",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "MENTED SUPER",
+      "matchedTo": "MENTED SUPER",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "ON SPOT",
+      "matchedTo": "ON SPOT",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA BOOST",
+      "matchedTo": "CHITRA BOOST",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA PACLO",
+      "matchedTo": "CHITRA PACLO",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CCS BOOSTER",
+      "matchedTo": "CCS BOOSTER",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITGIBB EZY",
+      "matchedTo": "CHITGIBB EZY",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA SONITE",
+      "matchedTo": "CHITRA SONITE",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA AMS",
+      "matchedTo": "CHITRA AMS",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA CALBO",
+      "matchedTo": "CHITRA CALBO",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA NPK (19:19:19)",
+      "matchedTo": "CHITRA NPK (19:19:19)",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA MEG",
+      "matchedTo": "CHITRA MEG",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA CN",
+      "matchedTo": "CHITRA CN",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA FE",
+      "matchedTo": "CHITRA FE",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA ZINC",
+      "matchedTo": "CHITRA ZINC",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA MKP",
+      "matchedTo": "CHITRA MKP",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA NKP",
+      "matchedTo": "CHITRA NKP",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA NP",
+      "matchedTo": "CHITRA NP",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA NOP",
+      "matchedTo": "CHITRA NOP",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA NPK (13:40:13)",
+      "matchedTo": "CHITRA NPK (13:40:13)",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA MAP",
+      "matchedTo": "CHITRA MAP",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA PKA",
+      "matchedTo": "CHITRA PKA",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA SOP",
+      "matchedTo": "CHITRA SOP",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA GOLD",
+      "matchedTo": "CHITRA GOLD",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA CBZ",
+      "matchedTo": "CHITRA CBZ",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA NK",
+      "matchedTo": "CHITRA NK",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA B",
+      "matchedTo": "CHITRA B",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA ZIB",
+      "matchedTo": "CHITRA ZIB",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA NP (Liquid)",
+      "matchedTo": "CHITRA NP (LIQUID)",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA CA",
+      "matchedTo": "CHITRA CA",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA ZN",
+      "matchedTo": "CHITRA ZN",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA CAL-11",
+      "matchedTo": "CHITRA CAL-11",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA MAX",
+      "matchedTo": "CHITRA MAX",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA 888",
+      "matchedTo": "CHITRA 888",
+      "recordsUpdated": 1
+    },
+    {
+      "sourceName": "CHITRA ZINCOOX",
+      "matchedTo": "CHITRA ZINCOOX",
+      "recordsUpdated": 2
+    }
+  ]
+}

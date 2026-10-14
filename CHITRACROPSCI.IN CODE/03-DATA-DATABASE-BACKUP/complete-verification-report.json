@@ -1,0 +1,964 @@
+{
+  "totalBrochureProducts": 132,
+  "totalCatalogProducts": 173,
+  "missingProducts": [
+    "CCS-NEEM 100",
+    "HAMLAVAR",
+    "CCS-CARB ULTRA",
+    "CHITRA NPK 19-19-19",
+    "CHITRA NPK 13-40-13",
+    "CHITRA NPK 00-52-34",
+    "CHITRA NPK 12-61-00",
+    "CHITRA NPK 13-00-45",
+    "CHITRA NPK 00-00-50",
+    "CHITRA NPK NP",
+    "CHITRA NKP NPK",
+    "CHITRA PKA NPK"
+  ],
+  "missingImages": [],
+  "missingDetails": [
+    {
+      "product": "MONOSIL",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "FEURADON-3G",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "ATTACK-10 G",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "DUALSTRIKE GR",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "QUEENPHOS",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA PYRAD",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "ABACHIT",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITWEED",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "ATTACK-50",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "BENZO NIL",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "AAKRAMAN",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITARA GOLD",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "KILL-LARVA",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CYQ-320",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "MORPHIS",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "SHAKTIMAN",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "PRO-VALIDA",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "TEBU SF",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA M-45",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "VITARA GOLD",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA-COC",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "MR.THANKS",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "METMAX",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "SEED MAX PRO",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA DEFEND",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CAPHEXA",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRACOL",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "SAFE COVER",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITHEXA GOLD",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "HARIYALI SULF-80",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "TEBU TRY",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "AZOTRI PLUS",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHIT HEXA",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "SEED MAX",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "DIFINE-25",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "PICOXY ZOLE",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "PYRAMET",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "TEBZOLE SUPER",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA SARTHI",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "HIT-WICKET",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "PENDI-STOP",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "TEBZOLE",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHIT-OXY",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "QUIZFOP-10",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITWEED SUPER",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "JODIDAR",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "PENDI-STOP EXTRA",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "BATALIYAN",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITMIZA",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "SULFO-ON",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "TEMBA",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITMIZA-10",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "BHAGAO",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA MSM",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "ACTIVE 100",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "HARIYALI GOLD PLUS",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "FLO-JEET",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "WELCOME HONEY BEE",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "STORAGE",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHIT BRIGHT",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "DHARTI RATAN",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "DR ROOT RAJA",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "ROOT RAJA",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "ON SPOT",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA BOOST",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA PACLO",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CCS BOOSTER",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITGIBB EZY",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA CN",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA MEG",
+      "fields": [
+        "packSizes"
+      ]
+    },
+    {
+      "product": "CHITRA SONITE",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA AMS",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA FE",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA CALBO",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA ZINC",
+      "fields": [
+        "packSizes"
+      ]
+    },
+    {
+      "product": "CHITRA CAL-11",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA ZINCOOX",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    },
+    {
+      "product": "CHITRA SOP",
+      "fields": [
+        "technicalName",
+        "dose",
+        "packSizes",
+        "uses",
+        "benefits",
+        "suitableCrops",
+        "applicationMethod"
+      ]
+    }
+  ],
+  "wrongCategories": [
+    {
+      "product": "TEBZOLE",
+      "expected": "HERBICIDE",
+      "actual": "FUNGICIDE"
+    }
+  ],
+  "brokenRoutes": [],
+  "productsFixed": [
+    "MONOSIL (image fixed)",
+    "DUALSTRIKE GR (image fixed)",
+    "TEBZOLE",
+    "QUIZFOP-10 (image fixed)",
+    "PENDI-STOP EXTRA (image fixed)",
+    "CHITRA MSM (image fixed)",
+    "CHIT BRIGHT (image fixed)",
+    "CCS BOOSTER (image fixed)"
+  ],
+  "productsVerified": 120
+}

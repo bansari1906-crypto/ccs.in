@@ -1,0 +1,38 @@
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+*.exe
+
+# Virtual Environments
+venv/
+env/
+.env
+.venv
+ENV/
+
+# Build Outputs
+dist/
+build/
+*.log
+
+# Django Media & Static
+django_backend/media/
+django_backend/static/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS files
+Thumbs.db
+

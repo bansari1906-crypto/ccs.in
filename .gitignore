@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+
+# Build & Staging Artifacts
+dist/
+build/
+staticfiles/
+Hostinger_Upload/
+livecode_stage/
+public_html-ready/
+public_html_BACKUP_*/
+
+# Large files exceeding GitHub 100MB limit
+*.zip
+*.tar
+*.gz
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.pdf
+
+# Environment & Logs
+.env
+.env.local
+*.log
+logs/
+.system_generated/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,248 @@
+{
+  "totalBrochureProducts": 133,
+  "totalCatalogProducts": 173,
+  "missingProducts": [
+    "CCS NEEM 100",
+    "TEBZOLE",
+    "CHITRA NPK",
+    "CHITRA MKP",
+    "CHITRA NKP",
+    "CHITRA NP",
+    "CHITRA NOP",
+    "CHITRA MAP",
+    "CHITRA PKA",
+    "CHITRA GOLD",
+    "CHITRA CBZ",
+    "CHITRA NK",
+    "CHITRA B",
+    "CHITRA ZIB",
+    "CHITRA NP",
+    "CHITRA CA",
+    "CHITRA ZN",
+    "CHITRA MAX",
+    "CLEAN N CLEAR",
+    "TEBZOLE SUPER",
+    "GELELIYA",
+    "TEBZOLE",
+    "CCS-NEEM 100",
+    "TEBUZOLE SUPER",
+    "TEBUZOLE",
+    "HAMLAVAR",
+    "CCS-CARB ULTRA",
+    "CHITRA NPK 19-19-19",
+    "CHITRA NPK 13-40-13",
+    "CHITRA NPK 00-52-34",
+    "CHITRA NPK 12-61-00",
+    "CHITRA NPK 13-00-45",
+    "CHITRA NPK 00-00-50",
+    "CHITRA NPK NP",
+    "CHITRA NKP NPK",
+    "CHITRA PKA NPK"
+  ],
+  "missingImages": [
+    "MONOSIL",
+    "FIMIDA-40",
+    "DUALSTRIKE GR",
+    "KILL-LARVA",
+    "HARIYALI SULF-80",
+    "SEED MAX PRO",
+    "SAFE COVER",
+    "TEBU TRY",
+    "SEED MAX",
+    "QUIZFOP-10",
+    "SULFO-ON",
+    "CHITRA MSM",
+    "CHIT BRIGHT",
+    "ON SPOT",
+    "CCS BOOSTER",
+    "ON SPOT",
+    "SAFE COVER",
+    "DIFINE-25",
+    "PICOXY ZOLE",
+    "SEED MAX",
+    "TEBU TRY",
+    "DUALSTRIKE GR",
+    "SULFO-ON",
+    "QUIZFOP-10",
+    "PENDI-STOP EXTRA"
+  ],
+  "wrongCategories": [
+    {
+      "name": "CHITWEED",
+      "old": "HERBICIDE",
+      "new": "INSECTICIDE"
+    },
+    {
+      "name": "ACTIVE 100",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "HARIYALI GOLD PLUS",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "SUPPORTER",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "FLOWER PLUS",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "CCS-303",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "CCS-CARB",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "MULTI POWER 55",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "FLO-JEET",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "WELCOME HONEY BEE",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "STORAGE",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "AMITRA 80",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "CHIT BRIGHT",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "DHARTI RATAN",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "ROOT RATAN",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "DR ROOT RAJA",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "ROOT RAJA",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "CRAGIBB",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "FLO-AVTAR",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "MENTED SUPER",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "ON SPOT",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "CHITRA BOOST",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "CHITRA PACLO",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "CCS BOOSTER",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "CHITGIBB EZY",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "ON SPOT",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "CHITGIBB EZY",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "CHITRA PACLO",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    },
+    {
+      "name": "CHITRA BOOST",
+      "old": "PGR / BIO STIMULANT",
+      "new": "PGR"
+    }
+  ],
+  "productsFixed": [
+    "CHITWEED",
+    "ACTIVE 100",
+    "HARIYALI GOLD PLUS",
+    "SUPPORTER",
+    "FLOWER PLUS",
+    "CCS-303",
+    "CCS-CARB",
+    "MULTI POWER 55",
+    "FLO-JEET",
+    "WELCOME HONEY BEE",
+    "STORAGE",
+    "AMITRA 80",
+    "CHIT BRIGHT",
+    "DHARTI RATAN",
+    "ROOT RATAN",
+    "DR ROOT RAJA",
+    "ROOT RAJA",
+    "CRAGIBB",
+    "FLO-AVTAR",
+    "MENTED SUPER",
+    "ON SPOT",
+    "CHITRA BOOST",
+    "CHITRA PACLO",
+    "CCS BOOSTER",
+    "CHITGIBB EZY",
+    "ON SPOT",
+    "CHITGIBB EZY",
+    "CHITRA PACLO",
+    "CHITRA BOOST"
+  ],
+  "productsVerified": 151
+}
