@@ -1,0 +1,21 @@
+{
+  "short_name": "Chitra Crop",
+  "name": "Chitra Crop Science",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#FAFDF9",
+  "theme_color": "#042415",
+  "display": "standalone",
+  "orientation": "portrait"
+}
