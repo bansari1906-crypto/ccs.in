@@ -350,8 +350,8 @@ const Home = () => {
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4 border border-emerald-200">
-              <Video className="w-3.5 h-3.5 text-red-600" />
-              On-Ground Farmer Proof
+              <Users className="w-3.5 h-3.5 text-emerald-700" />
+              Farmer Field Experiences
             </span>
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight">
               Real Farmer Video Reviews
@@ -383,16 +383,6 @@ const Home = () => {
 
                     {/* Gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
-
-                    {/* Top Badges */}
-                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-red-600 text-white shadow-md">
-                        <Video className="w-3 h-3" /> Reel
-                      </span>
-                      <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-slate-900/80 text-amber-300 backdrop-blur-md border border-white/10">
-                        <Star className="w-3 h-3 fill-current text-amber-400" /> 5.0
-                      </span>
-                    </div>
 
                     {/* Center Play Button */}
                     <button
@@ -446,7 +436,7 @@ const Home = () => {
                     onClick={() => setActiveVideo({ url: item.videoUrl, title: item.title, farmer: item.farmer })}
                     className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 hover:bg-emerald-100 transition"
                   >
-                    Watch Reel
+                    Watch Video
                   </button>
                 </div>
               </motion.div>

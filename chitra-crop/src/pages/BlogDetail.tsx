@@ -167,14 +167,6 @@ const BlogDetail = () => {
               day: "numeric",
             })}
           </span>
-          {post.rating && (
-            <>
-              <span>•</span>
-              <span className="flex items-center gap-1 text-amber-600 font-semibold">
-                <Star className="w-4 h-4 fill-current text-amber-400" /> 5.0 Farmer Rating
-              </span>
-            </>
-          )}
         </div>
       </div>
 

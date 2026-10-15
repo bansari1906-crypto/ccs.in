@@ -135,14 +135,6 @@ const Blog = () => {
                         </div>
                       </button>
                     )}
-
-                    {/* Rating Badge */}
-                    {post.rating && (
-                      <div className="absolute bottom-4 right-4 z-10 flex items-center gap-1 px-2.5 py-1 rounded-full bg-slate-950/75 backdrop-blur-md text-amber-300 border border-white/10 text-xs font-bold">
-                        <Star className="w-3.5 h-3.5 fill-current text-amber-400" />
-                        <span>5.0 Verified</span>
-                      </div>
-                    )}
                   </div>
                 ) : null}
 
