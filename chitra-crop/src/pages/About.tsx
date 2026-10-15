@@ -22,6 +22,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import aboutSoil from "@/assets/about-soil.jpg";
+import aboutCrops from "@/assets/about-crops.jpg";
 import founderImage from "@/assets/founder-jethu-dan.png";
 import { SeoSchema } from "@/components/SeoSchema";
 
@@ -88,7 +89,7 @@ const About = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
-            src="/assets/media/Scene 5 - Plant Growth.png" 
+            src={aboutCrops} 
             alt="Agriculture Background" 
             className="w-full h-full object-cover"
           />

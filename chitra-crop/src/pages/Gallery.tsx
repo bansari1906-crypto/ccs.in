@@ -127,13 +127,6 @@ const localMedia: MediaItem[] = [
   { id: "poster", category: "products", type: "image", src: "/assets/media/Green Modern Organic Fertilizer Promotion Poster Landscape.png", caption: "Organic Bio-Fertilizer Formulation Showcase" },
   { id: "PRODUCTFULLTRAY", category: "products", type: "image", src: "/assets/media/PRODUCT FULL TRAY.png", caption: "Certified Agrochemical Packaging" },
   { id: "PRODUCT1", category: "products", type: "image", src: "/assets/media/PRODUCT1.png", caption: "High-Yield Crop Nutrition Line" },
-  { id: "scene2", category: "products", type: "image", src: "/assets/media/Scene 2 - Pomegranate Orchards.png", caption: "Pomegranate Orchards Cultivation" },
-  { id: "scene3", category: "products", type: "image", src: "/assets/media/Scene 3 - Farmers in Fields.png", caption: "Farmers Achieving Record Harvests" },
-  { id: "scene4", category: "products", type: "image", src: "/assets/media/Scene 4 - Fertilizer Application.png", caption: "Scientific Micronutrient Application" },
-  { id: "scene5", category: "products", type: "image", src: "/assets/media/Scene 5 - Plant Growth.png", caption: "Vigorous Plant Root & Shoot Growth" },
-  { id: "scene6", category: "products", type: "image", src: "/assets/media/Scene 6 - Laboratory.png", caption: "Quality Testing & Formulation Laboratory" },
-  { id: "scene7", category: "products", type: "image", src: "/assets/media/Scene 7 - Final Shot.png", caption: "Empowering Indian Agriculture" },
-  { id: "canadian", category: "products", type: "image", src: "/assets/media/canadian-digital-agriculture-revolution.jpeg", caption: "Modern Agricultural Innovation" },
 
   // Additional Videos
   { id: "video1", category: "reviews", type: "video", src: "/assets/media/WhatsApp Video 2026-04-26 at 17.13.14.mp4", caption: "Field Demonstration Footage" },
