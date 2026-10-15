@@ -74,10 +74,10 @@ const Home = () => {
     email: "chitracropscience22@gmail.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "BLOCK-D, 404, Signature 2 Internal Rd, Makarba, Sarkhej-Okaf, Ahmedabad, Gujarat 382210, India",
+      streetAddress: "B/904, Titanium Square, Thaltej Cross Road, Near BMW Showroom, S G Highway, Thaltej, Ahmedabad, Gujarat 380054, India",
       addressLocality: "Ahmedabad",
       addressRegion: "Gujarat",
-      postalCode: "382210",
+      postalCode: "380054",
       addressCountry: "IN"
     },
     areaServed: ["IN", "Gujarat", "Rajasthan", "Maharashtra"],

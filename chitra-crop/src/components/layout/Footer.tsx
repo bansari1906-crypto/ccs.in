@@ -97,7 +97,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
                 <span>
-                  BLOCK-D, 404, Signature 2 Internal Rd, Makarba, Sarkhej-Okaf, Ahmedabad, Gujarat 382210, India
+                  B/904, Titanium Square, Thaltej Cross Road, Near BMW Showroom, S G Highway, Thaltej, Ahmedabad, Gujarat 380054, India
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -113,17 +113,17 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-            {/* Map Placeholder */}
+            {/* Map */}
             <div className="rounded-xl overflow-hidden bg-emerald-900/50 border border-emerald-800">
               <iframe
-                    title="Google Map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.508369493867!2d72.5035!3d22.9993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f233d00001%3A0x8f4c4f8c3c1c8c1!2sSignature%202%2C%20Ahmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1750495800000!5m2!1sen!2sin"
-                    width="100%"
-                    height="160"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
+                title="Google Map"
+                src="https://maps.google.com/maps?q=Titanium+Square,+Thaltej+Cross+Road,+Near+BMW+Showroom,+S+G+Highway,+Thaltej,+Ahmedabad,+Gujarat+380054&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="160"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>

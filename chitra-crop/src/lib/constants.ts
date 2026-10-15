@@ -5,28 +5,28 @@
 
 export const COMPANY_LOCATION = {
   // Full address components
-  block: "BLOCK-D",
-  building: "404",
-  street: "Signature 2 Internal Rd",
-  area: "Makarba",
-  landmark: "Sarkhej-Okaf",
+  block: "B/904",
+  building: "Titanium Square",
+  street: "Thaltej Cross Road, Near BMW Showroom, S G Highway",
+  area: "Thaltej",
+  landmark: "Near BMW Showroom",
   city: "Ahmedabad",
   state: "Gujarat",
-  postalCode: "382210",
+  postalCode: "380054",
   country: "India",
   
   // Formatted addresses
-  fullAddress: "BLOCK-D, 404, Signature 2 Internal Rd, Makarba, Sarkhej-Okaf, Ahmedabad, Gujarat 382210, India",
-  compactAddress: "Block-D, 404, Signature 2 Internal Rd, Makarba, Ahmedabad, Gujarat 382210",
-  shortAddress: "Makarba, Ahmedabad, Gujarat 382210",
+  fullAddress: "B/904, Titanium Square, Thaltej Cross Road, Near BMW Showroom, S G Highway, Thaltej, Ahmedabad, Gujarat 380054, India",
+  compactAddress: "B/904, Titanium Square, Thaltej Cross Road, Near BMW Showroom, S G Highway, Thaltej, Ahmedabad, Gujarat 380054",
+  shortAddress: "Titanium Square, Thaltej, Ahmedabad 380054",
   
   // Coordinates (Latitude, Longitude)
-  // Makarba area, Sarkhej-Okaf, Ahmedabad
-  latitude: 23.0200,
-  longitude: 72.4520,
+  // Titanium Square, Thaltej Cross Road, Near BMW Showroom, S G Highway, Thaltej, Ahmedabad
+  latitude: 23.050842,
+  longitude: 72.518753,
   
   // Alternative format for Google Maps
-  mapsCoordinates: "23.0200,72.4520",
+  mapsCoordinates: "23.050842,72.518753",
 } as const;
 
 export const COMPANY_CONTACT = {
