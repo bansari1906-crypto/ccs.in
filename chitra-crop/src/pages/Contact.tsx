@@ -76,6 +76,25 @@ const Contact = () => {
         <div className="space-y-6 flex flex-col">
           {/* Contact Card */}
           <div className="rounded-3xl border border-border bg-gradient-to-br from-card to-card/80 p-6 md:p-8 shadow-soft hover:shadow-md transition-shadow flex-grow">
+            {/* Headquarters Photo */}
+            <div className="relative rounded-2xl overflow-hidden mb-6 border border-border shadow-sm group">
+              <img
+                src="/assets/media/office/office-headquarters-main.jpeg"
+                alt="Chitra Crop Science Corporate Headquarters at Titanium Square"
+                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent flex items-end p-4">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-300 bg-slate-950/70 px-2.5 py-0.5 rounded-full border border-emerald-500/30 backdrop-blur-sm">
+                    Corporate Headquarters
+                  </span>
+                  <p className="text-white text-sm font-semibold mt-1.5">
+                    Titanium Square, S G Highway, Ahmedabad
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <h3 className="font-serif text-xl md:text-2xl font-semibold">Reach us directly</h3>
             <ul className="mt-6 space-y-5">
               {/* Address */}

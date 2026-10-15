@@ -17,6 +17,7 @@ import {
   BookOpen,
   ChevronRight,
   Quote,
+  Building2,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
@@ -464,8 +465,107 @@ const About = () => {
         </div>
       </Section>
 
+      {/* 7b. Corporate Headquarters Section */}
+      <Section className="py-20 md:py-28 bg-white border-y border-slate-200">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-4 border border-emerald-200">
+              <Building2 className="h-3.5 w-3.5 text-emerald-600" />
+              Corporate Headquarters
+            </span>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight">
+              Our Base of Agricultural Innovation
+            </h2>
+            <p className="mt-4 text-base md:text-lg text-slate-600 leading-relaxed">
+              Operating from Titanium Square on S G Highway, Ahmedabad, our modern corporate headquarters connects agricultural research, dealer logistics, and nationwide farmer advisory services.
+            </p>
+            <div className="mt-4 inline-flex items-center gap-2 text-sm text-slate-700 bg-slate-100 px-4 py-2 rounded-xl border border-slate-200">
+              <MapPin className="h-4 w-4 text-emerald-600 flex-shrink-0" />
+              <span>B/904, Titanium Square, Thaltej Cross Road, Near BMW Showroom, S G Highway, Ahmedabad 380054</span>
+            </div>
+          </div>
 
+          {/* Featured HQ Layout */}
+          <div className="grid lg:grid-cols-12 gap-6 items-stretch">
+            {/* Main Featured Photo */}
+            <div className="lg:col-span-7 rounded-3xl overflow-hidden shadow-xl border border-slate-200 relative group min-h-[380px]">
+              <img
+                src="/assets/media/office/office-headquarters-main.jpeg"
+                alt="Chitra Crop Science Corporate Headquarters Overview"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent flex flex-col justify-end p-6 md:p-8">
+                <span className="inline-block px-3 py-1 rounded-md bg-emerald-500 text-slate-950 text-xs font-bold uppercase tracking-wider mb-2 w-fit">
+                  Central Operations
+                </span>
+                <h3 className="text-xl md:text-2xl font-serif font-bold text-white">
+                  Executive Suite & Corporate Operations
+                </h3>
+                <p className="text-slate-300 text-sm mt-1 max-w-xl">
+                  Equipped with modern infrastructure and agronomy systems to coordinate field operations, dealer networks, and farmer support across India.
+                </p>
+              </div>
+            </div>
 
+            {/* Side Grid with other office images */}
+            <div className="lg:col-span-5 grid sm:grid-cols-2 gap-4">
+              <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 relative group aspect-square">
+                <img
+                  src="/assets/media/office/office-boardroom.jpeg"
+                  alt="Executive Boardroom"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-3.5">
+                  <p className="text-white text-xs font-semibold">Executive Boardroom</p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 relative group aspect-square">
+                <img
+                  src="/assets/media/office/office-reception.jpeg"
+                  alt="Corporate Reception"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-3.5">
+                  <p className="text-white text-xs font-semibold">Welcome Reception</p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 relative group aspect-square">
+                <img
+                  src="/assets/media/office/office-cabin.jpeg"
+                  alt="Founder & Director Cabin"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-3.5">
+                  <p className="text-white text-xs font-semibold">Director Cabin</p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 relative group aspect-square">
+                <img
+                  src="/assets/media/office/office-lounge.jpeg"
+                  alt="Executive Discussion Lounge"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-3.5">
+                  <p className="text-white text-xs font-semibold">Discussion Lounge</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition"
+            >
+              <span>View all headquarters & facility photos in gallery</span>
+              <ChevronRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </Section>
 
       {/* 8. Call to Action */}
       <section className="py-24 md:py-32 bg-gradient-to-r from-emerald-800 via-green-800 to-slate-900">
