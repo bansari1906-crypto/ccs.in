@@ -20,6 +20,9 @@ public_html_BACKUP_*/
 *.tar
 *.gz
 *.mp4
+!public_html/assets/media/review-*.mp4
+!assets/media/review-*.mp4
+!chitra-crop/public/assets/media/review-*.mp4
 *.mov
 *.avi
 *.wmv
