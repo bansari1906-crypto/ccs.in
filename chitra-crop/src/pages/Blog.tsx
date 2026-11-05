@@ -299,7 +299,10 @@ const Blog = () => {
 
                       {/* Excerpt */}
                       <p className="text-slate-600 line-clamp-3 text-sm sm:text-base leading-relaxed">
-                        {post.excerpt || post.summary || post.content?.substring(0, 180)}
+                        {(post.excerpt || post.summary || post.content?.substring(0, 180) || "")
+                          .replace(/\*\*/g, "")
+                          .replace(/^🌱\s*/, "🌱 ")
+                          .trim()}
                       </p>
 
                       {/* Tags chips */}
@@ -315,7 +318,7 @@ const Blog = () => {
                                 key={tag}
                                 className="inline-flex items-center text-[11px] px-2 py-0.5 rounded-md bg-slate-100 text-slate-600"
                               >
-                                #{tag}
+                                #{tag.replace(/^#+/, "")}
                               </span>
                             ))}
                         </div>

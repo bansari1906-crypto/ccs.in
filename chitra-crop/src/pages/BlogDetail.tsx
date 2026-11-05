@@ -269,7 +269,7 @@ When organic carbon drops, soil loses its sponge-like ability to hold moisture. 
         "@type": "BlogPosting",
         "headline": post.title,
         "description": post.meta_description || post.excerpt || post.content?.substring(0, 200),
-        "image": postImage?.startsWith("http") ? postImage : `${siteUrl}${postImage}`,
+        "image": postImage ? (postImage.startsWith("http") ? postImage : `${siteUrl}${postImage}`) : `${siteUrl}/assets/media/field1.jpeg`,
         "datePublished": post.published_date || post.published_at || post.created_at,
         "dateModified": post.published_date || post.published_at || post.created_at,
         "keywords": post.tags || undefined,
@@ -298,7 +298,7 @@ When organic carbon drops, soil loses its sponge-like ability to hold moisture. 
         "@type": "VideoObject",
         "name": post.title,
         "description": post.meta_description || post.excerpt || post.title,
-        "thumbnailUrl": [postImage?.startsWith("http") ? postImage : `${siteUrl}${postImage}`],
+        "thumbnailUrl": [postImage ? (postImage.startsWith("http") ? postImage : `${siteUrl}${postImage}`) : `${siteUrl}/assets/media/field1.jpeg`],
         "uploadDate": post.published_date || post.published_at || new Date().toISOString(),
         "contentUrl": postVideo.startsWith("http") ? postVideo : `${siteUrl}${postVideo}`,
         "embedUrl": postUrl,
@@ -368,10 +368,12 @@ When organic carbon drops, soil loses its sponge-like ability to hold moisture. 
     );
   }
 
-  const tagsList = post.tags
+  const tagsList = Array.isArray(post.tags)
+    ? (post.tags as string[]).map((t) => String(t).trim().replace(/^#+/, "")).filter(Boolean)
+    : typeof post.tags === "string"
     ? post.tags
         .split(",")
-        .map((t) => t.trim())
+        .map((t) => t.trim().replace(/^#+/, ""))
         .filter(Boolean)
     : [];
 
@@ -535,7 +537,7 @@ When organic carbon drops, soil loses its sponge-like ability to hold moisture. 
                   key={tag}
                   className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-sm"
                 >
-                  #{tag}
+                  #{tag.replace(/^#+/, "")}
                 </span>
               ))}
             </div>

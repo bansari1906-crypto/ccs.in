@@ -376,12 +376,17 @@ export const getBlogPosts = (): BlogPost[] => {
       const postSlug = p.slug || (isCarb ? "ccs-carb-ultra-organic-carbon-soil-health" : `article-${p.id ?? idx + 1}`);
       const createdDate = p.created_at || p.published_at || new Date().toISOString();
 
+      const defaultMatch = DEFAULT_BLOG_POSTS.find((d) => d.slug === postSlug);
+      const finalContent = p.content && p.content.trim().length > 50 ? p.content : (defaultMatch?.content || p.content || "");
+      const rawExcerpt = p.excerpt || (finalContent ? finalContent.substring(0, 180) : "");
+      const cleanExcerpt = rawExcerpt.replace(/\*\*/g, "").replace(/^🌱\s*/, "🌱 ").trim();
+
       return {
         id: p.id ?? idx + 1,
         title: p.title || "Untitled Article",
         slug: postSlug,
-        content: p.content || "",
-        excerpt: p.excerpt || (p.content ? p.content.substring(0, 180) : ""),
+        content: finalContent,
+        excerpt: cleanExcerpt,
         category: cat,
         featured_image: img,
         featured_image_url: img,

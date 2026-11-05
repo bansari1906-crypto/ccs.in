@@ -47,6 +47,38 @@ const localMedia: MediaItem[] = [
     poster: "/assets/media/poster-ratan-gold.jpg", 
     caption: "Ratan Gold / Dharti Ratan — 3D Animated Soil Life & Growth Stimulant" 
   },
+  { 
+    id: "anime-capsicum", 
+    category: "animations", 
+    type: "video", 
+    src: "/assets/media/anim-capsicum.mp4", 
+    poster: "/assets/media/poster-capsicum.jpg", 
+    caption: "Capsicum & Vegetable Crop Protection — 3D Animated Agronomy Guide" 
+  },
+  { 
+    id: "anime-cucumber", 
+    category: "animations", 
+    type: "video", 
+    src: "/assets/media/anim-cucumber.mp4", 
+    poster: "/assets/media/poster-cucumber.jpg", 
+    caption: "Cucumber & Creeper Crop Health & Yield — 3D Animated Video" 
+  },
+  { 
+    id: "anime-flower-agritech", 
+    category: "animations", 
+    type: "video", 
+    src: "/assets/media/anim-flower-agritech.mp4", 
+    poster: "/assets/media/poster-flower-agritech.jpg", 
+    caption: "Flower Setting & Fruit Drop Prevention — 3D Animated Demonstration" 
+  },
+  { 
+    id: "anime-crop-showcase", 
+    category: "animations", 
+    type: "video", 
+    src: "/assets/media/anim-crop-showcase.mp4", 
+    poster: "/assets/media/poster-crop-showcase.jpg", 
+    caption: "Complete Crop Protection & Agronomy Portfolio — 3D Animated Overview" 
+  },
 
   // ── Corporate Headquarters (Titanium Square, Thaltej, Ahmedabad) ─────────
   { 
