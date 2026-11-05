@@ -1,9 +1,10 @@
-import { useMemo } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useMemo, useEffect } from "react";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import djangoApi from "@/lib/djangoApi";
-import type { Product as UiProduct, ProductFaq } from "@/types/product";
+import type { Product as UiProduct } from "@/types/product";
 import staticProductCatalog from "@/data/product-catalog.json";
 import { staticBlogs } from "@/data/blogs";
+import { getBlogPosts, BlogPost as AdminBlogPost } from "@/lib/adminDataStore";
 
 export interface BlogPost {
   id: number | string;
@@ -22,6 +23,10 @@ export interface BlogPost {
   category?: string | null;
   rating?: number | null;
   status: string;
+  is_published?: boolean;
+  tags?: string;
+  meta_title?: string;
+  meta_description?: string;
   published_at: string | null;
   published_date?: string | null;
   created_at: string;
@@ -84,11 +89,15 @@ type BackendProduct = {
 type BackendBlogPost = { 
   id: number; 
   title: string; 
-  slug: string;
+  slug: string; 
   content: string; 
   created_at: string;
   is_published: boolean;
   featured_image?: string | null;
+  category?: string | null;
+  tags?: string | null;
+  meta_title?: string | null;
+  meta_description?: string | null;
 };
 type BackendGalleryItem = { id: number; image: string; title?: string | null; category?: string | null };
 type BackendTestimonial = { id: number; author: string; content: string; rating: number };
@@ -217,73 +226,109 @@ export function useCategories() {
 }
 
 export function useBlogPosts() {
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      queryClient.invalidateQueries({ queryKey: ["blog_posts"] });
+    };
+
+    window.addEventListener("blog_posts_updated", handleUpdate);
+    window.addEventListener("storage", handleUpdate);
+    return () => {
+      window.removeEventListener("blog_posts_updated", handleUpdate);
+      window.removeEventListener("storage", handleUpdate);
+    };
+  }, [queryClient]);
+
   const query = useQuery<BlogPost[]>({
     queryKey: ["blog_posts"],
     queryFn: async () => {
-      const staticMapped: BlogPost[] = staticBlogs.map((post) => ({
-        id: post.id,
-        title: post.title,
-        slug: post.slug,
-        summary: null,
-        excerpt: post.excerpt,
-        content: post.content,
-        featured_image: post.cover_image,
-        featured_image_url: post.cover_image,
-        cover_image: post.cover_image,
-        video_url: post.video_url,
-        farmer_name: post.farmer_name,
-        location: post.location,
-        crop: post.crop,
-        product_name: post.product_name,
-        category: post.category,
-        rating: post.rating ?? 5,
-        status: "published",
-        published_at: post.published_at,
-        published_date: post.published_at,
-        created_at: post.published_at,
-        author: post.author,
-      }));
+      // 1. Fetch from unified adminDataStore
+      const adminStorePosts: AdminBlogPost[] = getBlogPosts();
 
+      // 2. Try fetching from backend API if active
+      let backendPosts: BackendBlogPost[] = [];
       try {
         const response = await djangoApi.get<BackendBlogPost[]>("/blog/");
-        const data = (response.data as any).results ?? response.data ?? [];
-        const existingSlugs = new Set(staticMapped.map((p) => p.slug));
-        
-        const backendMapped: BlogPost[] = data
-          .filter((post: any) => !existingSlugs.has(post.slug))
-          .map((post: any) => ({
-            id: post.id,
-            title: post.title,
-            slug: post.slug,
-            summary: null,
-            excerpt: post.content?.substring(0, 200),
-            content: post.content,
-            featured_image: post.featured_image,
-            featured_image_url: post.featured_image,
-            cover_image: post.featured_image,
-            category: "guide",
-            status: post.is_published ? "published" : "draft",
-            published_at: post.created_at,
-            published_date: post.created_at,
-            created_at: post.created_at,
-            author: "Chitra Crop Science",
-          }));
-
-        return [...staticMapped, ...backendMapped];
-      } catch (error) {
-        console.log("Using static blog posts with reviews");
-        return staticMapped;
+        backendPosts = (response.data as any).results ?? response.data ?? [];
+      } catch {
+        // Fallback to local admin store if backend is not running
       }
-    },
-    staleTime: 1000 * 60 * 5,
-    refetchOnWindowFocus: false,
-  });
 
+      // Merge backend posts if any exist
+      const existingSlugs = new Set(adminStorePosts.map((p) => (p.slug || "").toLowerCase()));
+      const additionalFromBackend: BlogPost[] = backendPosts
+        .filter((post) => !existingSlugs.has((post.slug || "").toLowerCase()))
+        .map((post) => ({
+          id: post.id,
+          title: post.title,
+          slug: post.slug,
+          summary: null,
+          excerpt: post.content?.substring(0, 180) || "",
+          content: post.content,
+          featured_image: post.featured_image || null,
+          featured_image_url: post.featured_image || null,
+          cover_image: post.featured_image || null,
+          category: post.category || "guide",
+          status: post.is_published ? "published" : "draft",
+          is_published: Boolean(post.is_published),
+          tags: post.tags || "",
+          meta_title: post.meta_title || post.title,
+          meta_description: post.meta_description || post.content?.substring(0, 180) || "",
+          published_at: post.created_at,
+          published_date: post.created_at,
+          created_at: post.created_at,
+          author: "Chitra Crop Science",
+        }));
+
+      const allMerged = [...adminStorePosts, ...additionalFromBackend];
+
+      // 3. Exclude Draft posts from the public website!
+      const publishedPosts = allMerged.filter((post) => {
+        const isPub = post.is_published !== undefined ? post.is_published : post.status !== "draft";
+        return isPub && post.status !== "draft";
+      });
+
+      // 4. Normalize images, categories, and dates
+      return publishedPosts.map((post) => {
+        const image = post.featured_image || post.cover_image || post.featured_image_url || null;
+        return {
+          ...post,
+          summary: post.excerpt || post.content?.substring(0, 180) || null,
+          excerpt: post.excerpt || post.content?.substring(0, 180) || "",
+          category: post.category || (post.video_url ? "review" : "guide"),
+          featured_image: image,
+          featured_image_url: post.featured_image_url || image,
+          cover_image: post.cover_image || image,
+        };
+      });
+    },
+    staleTime: 0,
+    refetchOnMount: "always",
+    refetchOnWindowFocus: true,
+  });
 
   return {
     data: query.data ?? [],
     isLoading: query.isLoading,
+    isError: query.isError,
     error: query.error,
+    refetch: query.refetch,
+  };
+}
+
+export function useBlogPost(slug?: string) {
+  const blogPostsQuery = useBlogPosts();
+  const post = useMemo(() => {
+    if (!slug) return null;
+    const norm = slug.toLowerCase().trim();
+    return blogPostsQuery.data.find((item) => (item.slug || "").toLowerCase().trim() === norm) ?? null;
+  }, [blogPostsQuery.data, slug]);
+
+  return {
+    ...blogPostsQuery,
+    post,
   };
 }
 

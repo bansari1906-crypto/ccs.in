@@ -1,6 +1,7 @@
 
 import staticProductCatalog from "@/data/product-catalog.json";
 import officialProductCatalog from "@/data/official-product-catalog.json";
+import { staticBlogs } from "@/data/blogs";
 
 // --- Types ---
 export interface Product {
@@ -69,17 +70,62 @@ export interface Order {
 }
 
 export interface BlogPost {
-  id: number;
+  id: number | string;
   title: string;
   slug: string;
   featured_image: string | null;
+  featured_image_url?: string | null;
+  cover_image?: string | null;
   content: string;
-  meta_title: string;
-  meta_description: string;
-  tags: string;
+  excerpt?: string;
+  category?: string;
+  video_url?: string | null;
+  farmer_name?: string | null;
+  location?: string | null;
+  crop?: string | null;
+  product_name?: string | null;
+  rating?: number;
+  meta_title?: string;
+  meta_description?: string;
+  tags?: string;
   is_published: boolean;
+  status?: string;
   created_at: string;
+  published_at?: string;
+  published_date?: string;
+  author?: string;
 }
+
+export const DEFAULT_BLOG_POSTS: BlogPost[] = staticBlogs.map((b, index) => {
+  const publishedDate = b.published_at || new Date().toISOString();
+  const isPub = b.is_published !== false;
+  return {
+    id: b.id || index + 1,
+    title: b.title,
+    slug: b.slug,
+    content: b.content,
+    excerpt: b.excerpt || b.content?.substring(0, 180) || "",
+    featured_image: b.cover_image || null,
+    featured_image_url: b.cover_image || null,
+    cover_image: b.cover_image || null,
+    video_url: b.video_url || null,
+    farmer_name: b.farmer_name || null,
+    location: b.location || null,
+    crop: b.crop || null,
+    product_name: b.product_name || null,
+    category: b.category || (b.video_url ? "review" : "guide"),
+    rating: b.rating ?? 5,
+    tags: b.tags || "",
+    meta_title: b.meta_title || b.title,
+    meta_description: b.meta_description || b.excerpt || "",
+    is_published: isPub,
+    status: isPub ? "published" : "draft",
+    created_at: publishedDate,
+    published_at: publishedDate,
+    published_date: publishedDate,
+    author: b.author || "Chitra Crop Science",
+  };
+});
 
 export interface Testimonial {
   id: number;
@@ -190,8 +236,27 @@ const initializeData = () => {
   }
 
   // Blog
-  if (!localStorage.getItem("admin_blog")) {
-    localStorage.setItem("admin_blog", JSON.stringify([]));
+  const storedBlogRaw = localStorage.getItem("admin_blog");
+  if (!storedBlogRaw) {
+    localStorage.setItem("admin_blog", JSON.stringify(DEFAULT_BLOG_POSTS));
+  } else {
+    try {
+      const existing: BlogPost[] = JSON.parse(storedBlogRaw);
+      if (!Array.isArray(existing) || existing.length === 0) {
+        localStorage.setItem("admin_blog", JSON.stringify(DEFAULT_BLOG_POSTS));
+      } else {
+        const existingSlugs = new Set(existing.map((p) => (p.slug || "").toLowerCase()));
+        const missingDefaults = DEFAULT_BLOG_POSTS.filter(
+          (p) => !existingSlugs.has((p.slug || "").toLowerCase())
+        );
+        if (missingDefaults.length > 0) {
+          const merged = [...existing, ...missingDefaults];
+          localStorage.setItem("admin_blog", JSON.stringify(merged));
+        }
+      }
+    } catch {
+      localStorage.setItem("admin_blog", JSON.stringify(DEFAULT_BLOG_POSTS));
+    }
   }
 
   // Testimonials
@@ -271,11 +336,72 @@ export const saveOrders = (orders: Order[]) => {
 
 // --- Blog Functions ---
 export const getBlogPosts = (): BlogPost[] => {
-  return JSON.parse(localStorage.getItem("admin_blog") || "[]");
+  try {
+    const raw = localStorage.getItem("admin_blog");
+    if (!raw) {
+      localStorage.setItem("admin_blog", JSON.stringify(DEFAULT_BLOG_POSTS));
+      return DEFAULT_BLOG_POSTS;
+    }
+    const parsed: any[] = JSON.parse(raw);
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      localStorage.setItem("admin_blog", JSON.stringify(DEFAULT_BLOG_POSTS));
+      return DEFAULT_BLOG_POSTS;
+    }
+    return parsed.map((p, idx) => {
+      const isPub = p.is_published !== undefined ? Boolean(p.is_published) : p.status !== "draft";
+      const cat = p.category || (p.video_url ? "review" : "guide");
+      const img = p.featured_image || p.cover_image || p.featured_image_url || null;
+      const createdDate = p.created_at || p.published_at || new Date().toISOString();
+      return {
+        id: p.id ?? idx + 1,
+        title: p.title || "Untitled Article",
+        slug: p.slug || `article-${p.id || idx + 1}`,
+        content: p.content || "",
+        excerpt: p.excerpt || (p.content ? p.content.substring(0, 180) : ""),
+        category: cat,
+        featured_image: img,
+        featured_image_url: p.featured_image_url || img,
+        cover_image: p.cover_image || img,
+        video_url: p.video_url || null,
+        farmer_name: p.farmer_name || null,
+        location: p.location || null,
+        crop: p.crop || null,
+        product_name: p.product_name || null,
+        rating: p.rating ?? 5,
+        tags: p.tags || "",
+        meta_title: p.meta_title || p.title || "",
+        meta_description: p.meta_description || p.excerpt || "",
+        is_published: isPub,
+        status: isPub ? "published" : "draft",
+        created_at: createdDate,
+        published_at: p.published_at || createdDate,
+        published_date: p.published_date || p.published_at || createdDate,
+        author: p.author || "Chitra Crop Science",
+      };
+    });
+  } catch (e) {
+    console.error("Error reading admin_blog:", e);
+    return DEFAULT_BLOG_POSTS;
+  }
 };
 
 export const saveBlogPosts = (posts: BlogPost[]) => {
   localStorage.setItem("admin_blog", JSON.stringify(posts));
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(new CustomEvent("blog_posts_updated", { detail: posts }));
+    window.dispatchEvent(new Event("storage"));
+  }
+};
+
+export const getPublishedBlogPosts = (): BlogPost[] => {
+  return getBlogPosts().filter((p) => p.is_published && p.status !== "draft");
+};
+
+export const getBlogPostBySlug = (slug: string): BlogPost | null => {
+  if (!slug) return null;
+  const normSlug = slug.toLowerCase().trim();
+  const allPosts = getBlogPosts();
+  return allPosts.find((p) => (p.slug || "").toLowerCase().trim() === normSlug) || null;
 };
 
 // --- Testimonial Functions ---

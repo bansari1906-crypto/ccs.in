@@ -7,13 +7,17 @@ export interface BlogItem {
   cover_image: string;
   author: string;
   published_at: string;
-  category: "review" | "guide" | "case-study";
+  category: "review" | "guide" | "case-study" | "animated" | string;
   video_url?: string;
   farmer_name?: string;
   location?: string;
   crop?: string;
   product_name?: string;
   rating?: number;
+  tags?: string;
+  meta_title?: string;
+  meta_description?: string;
+  is_published?: boolean;
 }
 
 export const staticBlogs: BlogItem[] = [
@@ -222,5 +226,97 @@ An integrated pest management (IPM) approach is vital. Start with seed treatment
 
 ### Chitra's Plant Protection Range
 Our range of systemic and contact insecticides provides broad-spectrum control against these pests. Formulations like CCS-CARB ULTRA and specialized protection blends ensure long-lasting protection, keeping your groundnut crop safe from sowing to harvest.`
+  },
+  {
+    id: "ccs-carb-ultra-organic-carbon-soil-health",
+    title: "CCS-CARB ULTRA: The Importance of Organic Carbon for Healthy Soil and Better Crop Growth",
+    slug: "ccs-carb-ultra-organic-carbon-soil-health",
+    excerpt: "Discover how organic carbon rejuvenates degraded agricultural soils, powers beneficial microbes, boosts cation exchange capacity, and maximizes crop yield with Chitra Crop Science CCS-CARB ULTRA.",
+    category: "guide",
+    cover_image: "/assets/media/field1.jpeg",
+    author: "Chitra Agronomy Research Team",
+    published_at: "2026-06-15T09:00:00.000Z",
+    product_name: "CCS-CARB ULTRA",
+    crop: "All Agricultural, Horticultural & Cash Crops",
+    location: "Pan-India Field Application",
+    tags: "Organic Carbon, Soil Health, CCS-CARB ULTRA, Crop Growth, Bio-Stimulant, Root Development",
+    meta_title: "CCS-CARB ULTRA: The Importance of Organic Carbon for Healthy Soil and Better Crop Growth",
+    meta_description: "Learn why organic carbon is vital for soil microbial life, moisture retention, root nodulation, and high crop yields with Chitra Crop Science CCS-CARB ULTRA.",
+    rating: 5,
+    is_published: true,
+    content: `## The Foundation of Soil Fertility: Why Organic Carbon Matters
+
+Soil organic carbon (SOC) is the fundamental backbone of soil health and agricultural productivity. Decades of intensive chemical cultivation, excessive tillage, and prolonged summer heat across regions like Rajasthan, Gujarat, Haryana, and Maharashtra have severely depleted soil carbon levels—often dropping below the critical threshold of 0.5%.
+
+When organic carbon drops, soil loses its sponge-like ability to hold moisture. Beneficial fungi, mycorrhizae, and nitrogen-fixing bacteria diminish, fertilizer inputs get locked in insoluble salts, and plants suffer stunted root systems with poor yield.
+
+---
+
+### What is CCS-CARB ULTRA?
+
+**CCS-CARB ULTRA** is Chitra Crop Science's cutting-edge bio-stimulant and organic soil conditioner. Formulated with high-grade organic carbon, humic substances, fulvic fractions, and bioactive plant metabolites, CCS-CARB ULTRA restores the biological life force of agricultural land.
+
+#### Key Functions of CCS-CARB ULTRA:
+1. **Accelerates Microbial Proliferation:** Provides an immediate, metabolically available carbon source for beneficial soil bacteria, Trichoderma, and mycorrhizal networks.
+2. **Improves Cation Exchange Capacity (CEC):** Chelation of vital micronutrients (Zinc, Iron, Boron, Copper) and macronutrients (Phosphorus, Potassium), preventing nutrient lockout.
+3. **Enhances Water Retention:** Transforms compacted, sandy, or saline soils into fertile, crumbly loam that retains moisture 30-40% longer between irrigations.
+4. **Stimulates Vigorous Root Architecture:** Triggers primary and secondary root elongation, enabling deeper moisture penetration and heavy nutrient absorption.
+
+---
+
+### Field Results & Agronomic Benefits
+
+- **Groundnut & Pulses:** Dramatically increases root nodulation and nitrogen-fixing colonies, leading to uniform pod filling.
+- **Pomegranate, Citrus & Orchards:** Prevents fruit drop, improves fruit brix and color intensity by ensuring balanced micronutrient uptake.
+- **Cumin (Jeera) & Spices:** Strengthens root crowns against soil-borne damping-off and root wilt diseases.
+- **Cotton & Wheat:** Promotes rapid early vegetative vigor, thicker stalks, and higher boll/grain density.
+
+---
+
+### Recommended Application & Dosage
+
+- **Drip Irrigation / Fertigation:** 1.0 to 2.0 Liters per acre dissolved in water tank. Repeat every 25–30 days during active vegetative and fruit-development phases.
+- **Soil Drenching:** 2.5 ml to 3.0 ml per liter of clean water around the root root-zone canopy.
+- **Broadcasting with Fertilizer:** Mix 1–2 Liters of CCS-CARB ULTRA with well-rotted farmyard manure (FYM) or compost per acre at sowing or first top dressing.`
+  },
+  {
+    id: "ccs-potash-animation-balanced-nutrition-crop-growth",
+    title: "CCS POTASH Animation: Why Crops Need Balanced Nutrition & Water Transport",
+    slug: "ccs-potash-animation-balanced-nutrition-crop-growth",
+    excerpt: "Watch our vibrant 3D animated field mascot explain how rhodophyte-derived CCS POTASH maintains cellular water balance and powers nutrient transport in crops.",
+    category: "animated",
+    video_url: "/assets/media/ccs-potash-animation-rhodophyte.mp4",
+    cover_image: "/assets/media/poster-ccs-potash-animation.jpg",
+    author: "Chitra Crop Science Animation Studio",
+    farmer_name: "Chitra Sprout Mascot & Crop Health Guide",
+    location: "Chitra Crop Science Research Farm",
+    crop: "All Agricultural & Horticultural Crops",
+    product_name: "CCS POTASH (Rhodophyte-Derived Bio-Potash)",
+    rating: 5,
+    tags: "Animated Video, CCS POTASH, Rhodophyte Potash, Plant Nutrition, Water Balance, Nutrient Transport, Chitra Crop Science, Crop Management",
+    meta_title: "CCS POTASH 3D Animation: Crop Nutrition & Water Balance | Chitra Crop Science",
+    meta_description: "Watch our 3D animated field mascot explain why healthy crop growth requires balanced nutrition, water transport, and rhodophyte-derived CCS POTASH.",
+    is_published: true,
+    published_at: "2026-11-04T12:00:00.000Z",
+    content: `## Watch: "Hey Farmer Brother, Listen to Me Too!"
+
+In this vibrant 3D animated video from **Chitra Crop Science**, an energetic green sprout mascot comes to life in a sunlit, neatly cultivated farm to share an essential truth about crop health directly with farmers.
+
+### The Message from Our Animated Plant Mascot
+> *"अरे किसान भैया! मेरी भी सुनिए, अच्छी बढ़वार के लिए मुझे पानी के साथ सही पोषण भी चाहिए। यह पानी का संतुलन और पोषक तत्वों का परिवहन बनाए रखने में मदद करता है।"*
+
+As the animation illustrates, thriving crops need more than just irrigation—they require the right biological nutrition to regulate internal water balance and ensure smooth nutrient translocation from roots to shoot tips.
+
+---
+
+### Introducing CCS POTASH (Derived from Rhodophyte)
+To satisfy this vital nutritional requirement, **Chitra Crop Science** introduces **CCS POTASH**, a specialized potash formulation derived from marine rhodophyte (red algae):
+- **Cellular Water Regulation:** Assists plants in maintaining optimum turgor pressure and moisture balance during dry spells.
+- **Efficient Nutrient Transport:** Promotes vascular circulation so essential macro and micronutrients reach developing leaves, flowers, and fruits.
+- **Sustainable Crop Management:** Provides a crop-friendly nutritional boost aligned with modern agricultural science.
+
+---
+
+*Adopt proper nutrition and better crop management today. Chitra Crop Science — your trusted partner in farming progress.*`
   }
 ];
