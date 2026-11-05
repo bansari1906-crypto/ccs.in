@@ -246,41 +246,37 @@ const Home = () => {
       <SeoSchema type="FAQPage" data={faqSchema} />
 
       {/* Hero */}
-      <section className="relative isolate overflow-hidden">
+      <section className="relative isolate overflow-hidden min-h-[580px] md:min-h-[640px] flex items-center justify-center">
         <video
-        src="/media/final.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        poster="/assets/hero-farmer.jpg"
-        alt="Indian farmers using advanced crop protection, fertilizer, and bio-stimulant solutions"
-        className="absolute inset-0 -z-10 h-full w-full object-cover"
-      />
-        <div className="absolute inset-0 -z-10 bg-black/60" />
-        <div className="container py-24 md:py-36 text-primary-foreground text-center">
+          src="/media/final.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/assets/hero-farmer.jpg"
+          alt="Science-driven agricultural solutions for healthier crops and stronger soils"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/75 via-black/55 to-black/75" />
+        <div className="container py-20 md:py-28 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="max-w-3xl mx-auto"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold backdrop-blur-md text-emerald-300 uppercase tracking-wider">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              Trusted by 5,000+ Progressive Farmers Across India
-            </span>
-            <h1 className="mt-6 max-w-5xl mx-auto text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tight">
-              Scientific Crop Nutrition and Protection
-              <span className="block text-emerald-400 mt-2">Engineered for Bumper Yield and Soil Vitality</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight leading-[1.22]">
+              Growing a Better Future Through Agricultural Innovation
             </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-lg sm:text-xl text-white/90 leading-relaxed font-normal">
-              Empowering Indian agriculture under the leadership of Jethu Dan since 2008. From 100% biological pest defense (CCS-303) to organic soil carbon (CCS-CARB ULTRA), our field-tested bio-stimulants and plant nutrients deliver proven farm prosperity.
+            <p className="mt-5 text-base sm:text-lg md:text-xl text-slate-200/95 leading-relaxed font-normal max-w-2xl mx-auto">
+              Science-driven agricultural solutions for healthier crops, stronger soils and sustainable farming.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4 justify-center">
-              <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-500/30">
-                <Link to="/products">Explore Our Products</Link>
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+              <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-xl px-7 py-6 text-base shadow-lg shadow-emerald-950/20 transition-all">
+                <Link to="/products">Explore Our Solutions</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white/40 bg-white/10 text-white backdrop-blur-md hover:bg-white/20 hover:text-white">
+              <Button asChild size="lg" variant="outline" className="border-white/30 bg-white/10 hover:bg-white/20 text-white hover:text-white font-medium rounded-xl px-7 py-6 text-base backdrop-blur-sm transition-all">
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
