@@ -22,6 +22,46 @@ export interface BlogItem {
 
 export const staticBlogs: BlogItem[] = [
   {
+    id: "ccs-potash-animation-balanced-nutrition-crop-growth",
+    title: "CCS POTASH Animation: Why Crops Need Balanced Nutrition & Water Transport",
+    slug: "ccs-potash-animation-balanced-nutrition-crop-growth",
+    excerpt: "Watch our vibrant 3D animated field mascot explain how rhodophyte-derived CCS POTASH maintains cellular water balance and powers nutrient transport in crops.",
+    category: "animated",
+    video_url: "/assets/media/ccs-potash-animation-rhodophyte.mp4",
+    cover_image: "/assets/media/poster-ccs-potash-animation.jpg",
+    author: "Chitra Crop Science Animation Studio",
+    farmer_name: "Chitra Sprout Mascot & Crop Health Guide",
+    location: "Chitra Crop Science Research Farm",
+    crop: "All Agricultural & Horticultural Crops",
+    product_name: "CCS POTASH (Rhodophyte-Derived Bio-Potash)",
+    rating: 5,
+    tags: "Animated Video, CCS POTASH, Rhodophyte Potash, Plant Nutrition, Water Balance, Nutrient Transport, Chitra Crop Science, Crop Management",
+    meta_title: "CCS POTASH 3D Animation: Crop Nutrition & Water Balance | Chitra Crop Science",
+    meta_description: "Watch our 3D animated field mascot explain why healthy crop growth requires balanced nutrition, water transport, and rhodophyte-derived CCS POTASH.",
+    is_published: true,
+    published_at: new Date().toISOString(),
+    content: `## Watch: "Hey Farmer Brother, Listen to Me Too!"
+
+In this vibrant 3D animated video from **Chitra Crop Science**, an energetic green sprout mascot comes to life in a sunlit, neatly cultivated farm to share an essential truth about crop health directly with farmers.
+
+### The Message from Our Animated Plant Mascot
+> *"अरे किसान भैया! मेरी भी सुनिए, अच्छी बढ़वार के लिए मुझे पानी के साथ सही पोषण भी चाहिए। यह पानी का संतुलन और पोषक तत्वों का परिवहन बनाए रखने में मदद करता है।"*
+
+As the animation illustrates, thriving crops need more than just irrigation—they require the right biological nutrition to regulate internal water balance and ensure smooth nutrient translocation from roots to shoot tips.
+
+---
+
+### Introducing CCS POTASH (Derived from Rhodophyte)
+To satisfy this vital nutritional requirement, **Chitra Crop Science** introduces **CCS POTASH**, a specialized potash formulation derived from marine rhodophyte (red algae):
+- **Cellular Water Regulation:** Assists plants in maintaining optimum turgor pressure and moisture balance during dry spells.
+- **Efficient Nutrient Transport:** Promotes vascular circulation so essential macro and micronutrients reach developing leaves, flowers, and fruits.
+- **Sustainable Crop Management:** Provides a crop-friendly nutritional boost aligned with modern agricultural science.
+
+---
+
+*Adopt proper nutrition and better crop management today. Chitra Crop Science — your trusted partner in farming progress.*`
+  },
+  {
     id: "review-ccs-303-bagoda",
     title: "CCS-303 Field Review: 100% Organic Thrips & Mites Defense in Pomegranate Orchard (Bagoda, Rajasthan)",
     slug: "ccs-303-pomegranate-orchard-review-bagoda-rajasthan",
@@ -278,45 +318,5 @@ When organic carbon drops, soil loses its sponge-like ability to hold moisture. 
 - **Drip Irrigation / Fertigation:** 1.0 to 2.0 Liters per acre dissolved in water tank. Repeat every 25–30 days during active vegetative and fruit-development phases.
 - **Soil Drenching:** 2.5 ml to 3.0 ml per liter of clean water around the root root-zone canopy.
 - **Broadcasting with Fertilizer:** Mix 1–2 Liters of CCS-CARB ULTRA with well-rotted farmyard manure (FYM) or compost per acre at sowing or first top dressing.`
-  },
-  {
-    id: "ccs-potash-animation-balanced-nutrition-crop-growth",
-    title: "CCS POTASH Animation: Why Crops Need Balanced Nutrition & Water Transport",
-    slug: "ccs-potash-animation-balanced-nutrition-crop-growth",
-    excerpt: "Watch our vibrant 3D animated field mascot explain how rhodophyte-derived CCS POTASH maintains cellular water balance and powers nutrient transport in crops.",
-    category: "animated",
-    video_url: "/assets/media/ccs-potash-animation-rhodophyte.mp4",
-    cover_image: "/assets/media/poster-ccs-potash-animation.jpg",
-    author: "Chitra Crop Science Animation Studio",
-    farmer_name: "Chitra Sprout Mascot & Crop Health Guide",
-    location: "Chitra Crop Science Research Farm",
-    crop: "All Agricultural & Horticultural Crops",
-    product_name: "CCS POTASH (Rhodophyte-Derived Bio-Potash)",
-    rating: 5,
-    tags: "Animated Video, CCS POTASH, Rhodophyte Potash, Plant Nutrition, Water Balance, Nutrient Transport, Chitra Crop Science, Crop Management",
-    meta_title: "CCS POTASH 3D Animation: Crop Nutrition & Water Balance | Chitra Crop Science",
-    meta_description: "Watch our 3D animated field mascot explain why healthy crop growth requires balanced nutrition, water transport, and rhodophyte-derived CCS POTASH.",
-    is_published: true,
-    published_at: "2026-11-04T12:00:00.000Z",
-    content: `## Watch: "Hey Farmer Brother, Listen to Me Too!"
-
-In this vibrant 3D animated video from **Chitra Crop Science**, an energetic green sprout mascot comes to life in a sunlit, neatly cultivated farm to share an essential truth about crop health directly with farmers.
-
-### The Message from Our Animated Plant Mascot
-> *"अरे किसान भैया! मेरी भी सुनिए, अच्छी बढ़वार के लिए मुझे पानी के साथ सही पोषण भी चाहिए। यह पानी का संतुलन और पोषक तत्वों का परिवहन बनाए रखने में मदद करता है।"*
-
-As the animation illustrates, thriving crops need more than just irrigation—they require the right biological nutrition to regulate internal water balance and ensure smooth nutrient translocation from roots to shoot tips.
-
----
-
-### Introducing CCS POTASH (Derived from Rhodophyte)
-To satisfy this vital nutritional requirement, **Chitra Crop Science** introduces **CCS POTASH**, a specialized potash formulation derived from marine rhodophyte (red algae):
-- **Cellular Water Regulation:** Assists plants in maintaining optimum turgor pressure and moisture balance during dry spells.
-- **Efficient Nutrient Transport:** Promotes vascular circulation so essential macro and micronutrients reach developing leaves, flowers, and fruits.
-- **Sustainable Crop Management:** Provides a crop-friendly nutritional boost aligned with modern agricultural science.
-
----
-
-*Adopt proper nutrition and better crop management today. Chitra Crop Science — your trusted partner in farming progress.*`
   }
 ];

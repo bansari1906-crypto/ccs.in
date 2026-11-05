@@ -250,7 +250,7 @@ const initializeData = () => {
           (p) => !existingSlugs.has((p.slug || "").toLowerCase())
         );
         if (missingDefaults.length > 0) {
-          const merged = [...existing, ...missingDefaults];
+          const merged = [...missingDefaults, ...existing];
           localStorage.setItem("admin_blog", JSON.stringify(merged));
         }
       }
@@ -346,6 +346,19 @@ export const getBlogPosts = (): BlogPost[] => {
     if (!Array.isArray(parsed) || parsed.length === 0) {
       localStorage.setItem("admin_blog", JSON.stringify(DEFAULT_BLOG_POSTS));
       return DEFAULT_BLOG_POSTS;
+    }
+    // Ensure newly featured animated video is prioritized at index 0
+    const animIdx = parsed.findIndex(
+      (p) => p.slug === "ccs-potash-animation-balanced-nutrition-crop-growth"
+    );
+    if (animIdx > 0) {
+      const [animPost] = parsed.splice(animIdx, 1);
+      parsed.unshift(animPost);
+      try {
+        localStorage.setItem("admin_blog", JSON.stringify(parsed));
+      } catch {
+        // ignore quota issues
+      }
     }
     return parsed.map((p, idx) => {
       const isPub = p.is_published !== undefined ? Boolean(p.is_published) : p.status !== "draft";
