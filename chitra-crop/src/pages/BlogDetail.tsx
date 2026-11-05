@@ -116,16 +116,127 @@ const BlogDetail = () => {
 
   const post = useMemo(() => {
     if (!slug) return null;
-    const norm = slug.toLowerCase().trim();
-    return posts.find((item) => (item.slug || "").toLowerCase().trim() === norm) ?? null;
+    let decoded = slug;
+    try {
+      decoded = decodeURIComponent(slug);
+    } catch {}
+    const norm = decoded.toLowerCase().trim();
+    const cleanNorm = norm.replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
+    return (
+      posts.find((item) => {
+        const itemSlug = (item.slug || "").toLowerCase().trim();
+        const cleanItemSlug = itemSlug.replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+        const itemTitle = (item.title || "").toLowerCase().trim();
+        const itemTitleSlug = itemTitle.replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
+        // Direct slug match
+        if (itemSlug === norm || cleanItemSlug === cleanNorm) return true;
+        // Title slug match
+        if (itemTitleSlug === cleanNorm) return true;
+        // CCS-CARB ULTRA special matching
+        if (cleanNorm.includes("ccs-carb-ultra") || cleanNorm.includes("organic-carbon")) {
+          if (
+            cleanItemSlug.includes("ccs-carb-ultra") ||
+            itemTitle.includes("ccs-carb ultra") ||
+            itemTitle.includes("ccs-carb-ultra") ||
+            itemTitle.includes("organic carbon")
+          ) {
+            return true;
+          }
+        }
+        // CCS POTASH special matching
+        if (cleanNorm.includes("potash")) {
+          if (cleanItemSlug.includes("potash") || itemTitle.includes("potash")) {
+            return true;
+          }
+        }
+        // Substring / prefix match
+        if (cleanItemSlug.startsWith(cleanNorm) || cleanNorm.startsWith(cleanItemSlug)) return true;
+        // ID match
+        if (String(item.id).toLowerCase() === norm) return true;
+
+        return false;
+      }) ?? null
+    );
   }, [posts, slug]);
 
   const siteUrl = "https://chitracropscience.in";
   const postUrl = `${siteUrl}/blog/${slug}`;
 
-  const postImage = post
-    ? post.featured_image || post.cover_image || post.featured_image_url || "/assets/media/field1.jpeg"
-    : null;
+  const postImage = useMemo(() => {
+    if (!post) return null;
+    const raw = post.featured_image || post.cover_image || post.featured_image_url;
+    if (raw && raw.trim() && !raw.includes("null") && !raw.includes("undefined")) {
+      return raw;
+    }
+    const t = (post.title || "").toUpperCase();
+    if (t.includes("CCS-CARB ULTRA") || t.includes("CARB ULTRA")) {
+      return "/assets/media/ccs-carb-ultra.png";
+    }
+    if (t.includes("POTASH")) {
+      return "/assets/media/poster-ccs-potash-animation.jpg";
+    }
+    return "/assets/media/field1.jpeg";
+  }, [post]);
+
+  const postVideo = useMemo(() => {
+    if (!post) return null;
+    if (post.video_url && post.video_url.trim()) return post.video_url;
+    const t = (post.title || "").toUpperCase();
+    if (t.includes("CCS-CARB ULTRA") || t.includes("CARB ULTRA")) {
+      return "/assets/media/anim-ccs-carb.mp4";
+    }
+    return null;
+  }, [post]);
+
+  const postContent = useMemo(() => {
+    if (!post) return "";
+    if (post.content && post.content.trim().length > 100) {
+      return post.content;
+    }
+    const t = (post.title || "").toUpperCase();
+    if (t.includes("CCS-CARB ULTRA") || t.includes("ORGANIC CARBON")) {
+      return (
+        (post.content ? post.content + "\n\n---\n\n" : "") +
+        `## The Foundation of Soil Fertility: Why Organic Carbon Matters
+
+Soil organic carbon (SOC) is the fundamental backbone of soil health and agricultural productivity. Decades of intensive chemical cultivation, excessive tillage, and prolonged summer heat across regions like Rajasthan, Gujarat, Haryana, and Maharashtra have severely depleted soil carbon levels—often dropping below the critical threshold of 0.5%.
+
+When organic carbon drops, soil loses its sponge-like ability to hold moisture. Beneficial fungi, mycorrhizae, and nitrogen-fixing bacteria diminish, fertilizer inputs get locked in insoluble salts, and plants suffer stunted root systems with poor yield.
+
+---
+
+### What is CCS-CARB ULTRA?
+
+**CCS-CARB ULTRA** is Chitra Crop Science's cutting-edge bio-stimulant and organic soil conditioner. Formulated with high-grade organic carbon, humic substances, fulvic fractions, and bioactive plant metabolites, CCS-CARB ULTRA restores the biological life force of agricultural land.
+
+#### Key Functions of CCS-CARB ULTRA:
+1. **Accelerates Microbial Proliferation:** Provides an immediate, metabolically available carbon source for beneficial soil bacteria, Trichoderma, and mycorrhizal networks.
+2. **Improves Cation Exchange Capacity (CEC):** Chelation of vital micronutrients (Zinc, Iron, Boron, Copper) and macronutrients (Phosphorus, Potassium), preventing nutrient lockout.
+3. **Enhances Water Retention:** Transforms compacted, sandy, or saline soils into fertile, crumbly loam that retains moisture 30-40% longer between irrigations.
+4. **Stimulates Vigorous Root Architecture:** Triggers primary and secondary root elongation, enabling deeper moisture penetration and heavy nutrient absorption.
+
+---
+
+### Field Results & Agronomic Benefits
+
+- **Groundnut & Pulses:** Dramatically increases root nodulation and nitrogen-fixing colonies, leading to uniform pod filling.
+- **Pomegranate, Citrus & Orchards:** Prevents fruit drop, improves fruit brix and color intensity by ensuring balanced micronutrient uptake.
+- **Cumin (Jeera) & Spices:** Strengthens root crowns against soil-borne damping-off and root wilt diseases.
+- **Cotton & Wheat:** Promotes rapid early vegetative vigor, thicker stalks, and higher boll/grain density.
+
+---
+
+### Recommended Application & Dosage
+
+- **Drip Irrigation / Fertigation:** 1.0 to 2.0 Liters per acre dissolved in water tank. Repeat every 25–30 days during active vegetative and fruit-development phases.
+- **Soil Drenching:** 2.5 ml to 3.0 ml per liter of clean water around the root root-zone canopy.
+- **Broadcasting with Fertilizer:** Mix 1–2 Liters of CCS-CARB ULTRA with well-rotted farmyard manure (FYM) or compost per acre at sowing or first top dressing.`
+      );
+    }
+    return post.content || post.excerpt || "";
+  }, [post]);
 
   // Manage SEO document title, meta tags, and canonical URL
   useEffect(() => {
@@ -181,7 +292,7 @@ const BlogDetail = () => {
       }
     : null;
 
-  const videoSchema = post?.video_url
+  const videoSchema = postVideo
     ? {
         "@context": "https://schema.org",
         "@type": "VideoObject",
@@ -189,7 +300,7 @@ const BlogDetail = () => {
         "description": post.meta_description || post.excerpt || post.title,
         "thumbnailUrl": [postImage?.startsWith("http") ? postImage : `${siteUrl}${postImage}`],
         "uploadDate": post.published_date || post.published_at || new Date().toISOString(),
-        "contentUrl": post.video_url.startsWith("http") ? post.video_url : `${siteUrl}${post.video_url}`,
+        "contentUrl": postVideo.startsWith("http") ? postVideo : `${siteUrl}${postVideo}`,
         "embedUrl": postUrl,
         "publisher": {
           "@type": "Organization",
@@ -339,7 +450,7 @@ const BlogDetail = () => {
         </div>
 
         {/* Video Player Section if Video Exists */}
-        {post.video_url ? (
+        {postVideo ? (
           <div className="mb-12 overflow-hidden rounded-3xl bg-slate-950 p-4 sm:p-6 shadow-2xl border border-slate-800">
             <div className="mb-3 flex items-center justify-between text-white">
               <div className="flex items-center gap-2">
@@ -348,17 +459,17 @@ const BlogDetail = () => {
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                 </span>
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
-                  {post.category === "animated" || post.category === "animation" ? "Official 3D Animated Video" : "Official Farmer Field Video"}
+                  {post.category === "animated" || post.category === "animation" || postVideo.includes("anim-") ? "Official 3D Animated Video" : "Official Farmer Field Video"}
                 </span>
               </div>
               <span className="text-xs text-emerald-400 font-medium">
-                {post.category === "animated" || post.category === "animation" ? "Chitra Crop Science Animation Studio" : "Chitra Crop Science Field Network"}
+                {post.category === "animated" || post.category === "animation" || postVideo.includes("anim-") ? "Chitra Crop Science Animation Studio" : "Chitra Crop Science Field Network"}
               </span>
             </div>
 
             <div className="relative aspect-[9/16] max-h-[70vh] w-full mx-auto overflow-hidden rounded-2xl bg-black shadow-inner">
               <video
-                src={post.video_url}
+                src={postVideo}
                 poster={postImage || undefined}
                 controls
                 playsInline
@@ -366,7 +477,7 @@ const BlogDetail = () => {
               />
             </div>
             <p className="text-center text-xs text-slate-400 mt-3">
-              {post.category === "animated" || post.category === "animation"
+              {post.category === "animated" || post.category === "animation" || postVideo.includes("anim-")
                 ? "3D animation created by Chitra Crop Science. Tap play to watch the complete video."
                 : "Recorded on-site with verified farmers. Tap play to listen to real crop results and experience."}
             </p>
@@ -409,7 +520,7 @@ const BlogDetail = () => {
 
         {/* Main Content Body */}
         <div className="prose prose-slate lg:prose-lg max-w-none text-slate-700 leading-relaxed mb-10">
-          {renderFormattedContent(post.content || "")}
+          {renderFormattedContent(postContent)}
         </div>
 
         {/* Article Tags Section */}

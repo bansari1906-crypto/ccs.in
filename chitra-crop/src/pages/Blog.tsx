@@ -170,11 +170,22 @@ const Blog = () => {
           /* Blog Grid */
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             {filteredPosts.map((post) => {
-              const imageSrc =
-                !brokenImages[post.id] &&
-                (post.featured_image || post.cover_image || post.featured_image_url || "/assets/media/field1.jpeg");
-              const isVideo = Boolean(post.video_url);
-              const isAnimated = post.category === "animated" || post.category === "animation";
+              const isCarbUltra = (post.title || "").toUpperCase().includes("CCS-CARB ULTRA") || (post.title || "").toUpperCase().includes("ORGANIC CARBON");
+              const rawImg = post.featured_image || post.cover_image || post.featured_image_url;
+              const fallbackImg = isCarbUltra
+                ? "/assets/media/ccs-carb-ultra.png"
+                : (post.title || "").toUpperCase().includes("POTASH")
+                ? "/assets/media/poster-ccs-potash-animation.jpg"
+                : "/assets/media/field1.jpeg";
+
+              const imageSrc = !brokenImages[post.id]
+                ? (rawImg && rawImg.trim() && !rawImg.includes("null") && !rawImg.includes("undefined") ? rawImg : fallbackImg)
+                : fallbackImg;
+
+              const postVideoUrl = post.video_url || (isCarbUltra ? "/assets/media/anim-ccs-carb.mp4" : undefined);
+              const isVideo = Boolean(postVideoUrl);
+              const isAnimated = post.category === "animated" || post.category === "animation" || isCarbUltra;
+              const postSlug = post.slug || (isCarbUltra ? "ccs-carb-ultra-organic-carbon-soil-health" : `article-${post.id}`);
 
               return (
                 <Card
@@ -183,59 +194,62 @@ const Blog = () => {
                 >
                   <div>
                     {/* Media Image / Video Poster */}
-                    {imageSrc ? (
-                      <div className="relative aspect-video overflow-hidden bg-slate-900">
-                        <img
-                          src={imageSrc}
-                          alt={post.title}
-                          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                          loading="lazy"
-                          onError={() => {
-                            setBrokenImages((prev) => ({ ...prev, [post.id]: true }));
-                          }}
-                        />
+                    <div className="relative aspect-video overflow-hidden bg-slate-900">
+                      <img
+                        src={imageSrc}
+                        alt={post.title}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                        onError={() => {
+                          setBrokenImages((prev) => ({ ...prev, [post.id]: true }));
+                        }}
+                      />
 
-                        {/* Category Badge Overlay on Media */}
-                        <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-                          {isAnimated ? (
-                            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-700 text-white shadow-lg">
-                              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                              Animated Video
-                            </span>
-                          ) : isVideo ? (
-                            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-red-600 text-white shadow-lg">
-                              <Video className="w-3.5 h-3.5" />
-                              Video Review
-                            </span>
-                          ) : null}
+                      {/* Category Badge Overlay on Media */}
+                      <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
+                        {isAnimated ? (
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-700 text-white shadow-lg">
+                            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                            Animated Video
+                          </span>
+                        ) : isVideo ? (
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-red-600 text-white shadow-lg">
+                            <Video className="w-3.5 h-3.5" />
+                            Video Review
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-700 text-white shadow-lg">
+                            <BookOpen className="w-3.5 h-3.5" />
+                            Agronomy Guide
+                          </span>
+                        )}
 
-                          {post.product_name && (
-                            <span className="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-900/80 text-emerald-300 backdrop-blur-md border border-white/20">
-                              {post.product_name.split("(")[0].trim()}
-                            </span>
-                          )}
-                        </div>
-
-                        {/* Play Button Overlay for Video Posts */}
-                        {isVideo && post.video_url && (
-                          <button
-                            onClick={(e) => {
-                              e.preventDefault();
-                              setActiveVideo({
-                                url: post.video_url!,
-                                title: post.title,
-                                farmer: post.farmer_name || undefined,
-                              });
-                            }}
-                            className="absolute inset-0 flex items-center justify-center bg-black/25 hover:bg-black/40 transition-colors group/btn"
-                          >
-                            <div className="w-16 h-16 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center shadow-2xl transition transform group-hover/btn:scale-110">
-                              <Play className="w-7 h-7 fill-current ml-1" />
-                            </div>
-                          </button>
+                        {post.product_name && (
+                          <span className="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-900/80 text-emerald-300 backdrop-blur-md border border-white/20">
+                            {post.product_name.split("(")[0].trim()}
+                          </span>
                         )}
                       </div>
-                    ) : null}
+
+                      {/* Play Button Overlay for Video Posts */}
+                      {isVideo && postVideoUrl && (
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setActiveVideo({
+                              url: postVideoUrl,
+                              title: post.title,
+                              farmer: post.farmer_name || undefined,
+                            });
+                          }}
+                          className="absolute inset-0 flex items-center justify-center bg-black/25 hover:bg-black/40 transition-colors group/btn"
+                        >
+                          <div className="w-16 h-16 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center shadow-2xl transition transform group-hover/btn:scale-110">
+                            <Play className="w-7 h-7 fill-current ml-1" />
+                          </div>
+                        </button>
+                      )}
+                    </div>
 
                     <CardContent className="p-6 md:p-8">
                       {/* Meta Tags */}
@@ -271,7 +285,7 @@ const Blog = () => {
 
                       {/* Title */}
                       <h3 className="font-serif text-xl sm:text-2xl font-bold mb-3 text-slate-900 group-hover:text-emerald-700 transition-colors line-clamp-2">
-                        <Link to={`/blog/${post.slug}`}>
+                        <Link to={`/blog/${postSlug}`}>
                           {post.title}
                         </Link>
                       </h3>
@@ -311,18 +325,18 @@ const Blog = () => {
 
                   <CardFooter className="p-6 md:p-8 pt-0 flex items-center justify-between border-t border-slate-100 mt-4">
                     <Button asChild variant="ghost" className="pl-0 text-emerald-700 hover:text-emerald-800 hover:bg-transparent font-semibold">
-                      <Link to={`/blog/${post.slug}`}>
+                      <Link to={`/blog/${postSlug}`}>
                         {isAnimated ? "Watch Animation & Read Guide →" : isVideo ? "Watch Video & Read Report →" : "Read Full Article →"}
                       </Link>
                     </Button>
 
-                    {isVideo && post.video_url && (
+                    {isVideo && postVideoUrl && (
                       <Button
                         size="sm"
                         variant="outline"
                         onClick={() =>
                           setActiveVideo({
-                            url: post.video_url!,
+                            url: postVideoUrl,
                             title: post.title,
                             farmer: post.farmer_name || undefined,
                           })

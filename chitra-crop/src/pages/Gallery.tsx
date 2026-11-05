@@ -1,19 +1,53 @@
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Play, Building2, Video, Users, Sprout, LayoutGrid } from "lucide-react";
+import { Play, Building2, Video, Users, Sprout, LayoutGrid, Sparkles } from "lucide-react";
 
 // Media item definition
 interface MediaItem {
   id: string;
-  category: "office" | "reviews" | "fields" | "products";
+  category: "office" | "reviews" | "fields" | "products" | "animations";
   type: "image" | "video";
   src: string;
   poster?: string;
   caption: string;
 }
 
-// Curated media collection with new Corporate Headquarters imagery
+// Curated media collection with new Corporate Headquarters imagery and 3D animated explainers
 const localMedia: MediaItem[] = [
+  // ── 3D Animated Explainer Videos ──────────────────────────────────────
+  { 
+    id: "anime-ccs-potash", 
+    category: "animations", 
+    type: "video", 
+    src: "/assets/media/ccs-potash-animation-rhodophyte.mp4", 
+    poster: "/assets/media/poster-ccs-potash-animation.jpg", 
+    caption: "CCS POTASH (Rhodophyte-Derived Bio-Potash) — 3D Animated Balanced Nutrition Guide" 
+  },
+  { 
+    id: "anime-ccs-carb-ultra", 
+    category: "animations", 
+    type: "video", 
+    src: "/assets/media/anim-ccs-carb.mp4", 
+    poster: "/assets/media/poster-ccs-carb.jpg", 
+    caption: "CCS-CARB ULTRA (Organic Soil Carbon & Root Booster) — 3D Animated Explainer" 
+  },
+  { 
+    id: "anime-flower-plus", 
+    category: "animations", 
+    type: "video", 
+    src: "/assets/media/anim-flower-plus.mp4", 
+    poster: "/assets/media/poster-flower-plus.jpg", 
+    caption: "Flower Plus (Plant Flowering & Fruit Retention Booster) — 3D Animated Video" 
+  },
+  { 
+    id: "anime-ratan-gold", 
+    category: "animations", 
+    type: "video", 
+    src: "/assets/media/anim-ratan-gold.mp4", 
+    poster: "/assets/media/poster-ratan-gold.jpg", 
+    caption: "Ratan Gold / Dharti Ratan — 3D Animated Soil Life & Growth Stimulant" 
+  },
+
   // ── Corporate Headquarters (Titanium Square, Thaltej, Ahmedabad) ─────────
   { 
     id: "office-hq", 
@@ -137,6 +171,7 @@ const localMedia: MediaItem[] = [
 
 const categories = [
   { id: "all", label: "All Media", icon: LayoutGrid },
+  { id: "animations", label: "3D Animations", icon: Sparkles },
   { id: "office", label: "Corporate Office", icon: Building2 },
   { id: "reviews", label: "Farmer Reviews", icon: Video },
   { id: "fields", label: "Field Visits", icon: Users },

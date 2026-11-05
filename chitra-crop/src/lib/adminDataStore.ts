@@ -362,20 +362,31 @@ export const getBlogPosts = (): BlogPost[] => {
     }
     return parsed.map((p, idx) => {
       const isPub = p.is_published !== undefined ? Boolean(p.is_published) : p.status !== "draft";
-      const cat = p.category || (p.video_url ? "review" : "guide");
-      const img = p.featured_image || p.cover_image || p.featured_image_url || null;
+      const isCarb = (p.title || "").toUpperCase().includes("CCS-CARB ULTRA") || (p.title || "").toUpperCase().includes("ORGANIC CARBON");
+      const cat = p.category || (isCarb ? "animated" : p.video_url ? "review" : "guide");
+      
+      let img = p.featured_image || p.cover_image || p.featured_image_url || null;
+      if (!img || img === "null" || img === "undefined" || img === "") {
+        if (isCarb) img = "/assets/media/ccs-carb-ultra.png";
+        else if ((p.title || "").toUpperCase().includes("POTASH")) img = "/assets/media/poster-ccs-potash-animation.jpg";
+        else img = "/assets/media/field1.jpeg";
+      }
+
+      const vid = p.video_url || (isCarb ? "/assets/media/anim-ccs-carb.mp4" : null);
+      const postSlug = p.slug || (isCarb ? "ccs-carb-ultra-organic-carbon-soil-health" : `article-${p.id ?? idx + 1}`);
       const createdDate = p.created_at || p.published_at || new Date().toISOString();
+
       return {
         id: p.id ?? idx + 1,
         title: p.title || "Untitled Article",
-        slug: p.slug || `article-${p.id || idx + 1}`,
+        slug: postSlug,
         content: p.content || "",
         excerpt: p.excerpt || (p.content ? p.content.substring(0, 180) : ""),
         category: cat,
         featured_image: img,
-        featured_image_url: p.featured_image_url || img,
-        cover_image: p.cover_image || img,
-        video_url: p.video_url || null,
+        featured_image_url: img,
+        cover_image: img,
+        video_url: vid,
         farmer_name: p.farmer_name || null,
         location: p.location || null,
         crop: p.crop || null,
