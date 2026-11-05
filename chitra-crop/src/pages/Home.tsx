@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ShieldCheck, Sprout, Users, Droplets, Wheat, Sun, Leaf, Play, Star, MapPin, Video, CheckCircle2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -63,11 +63,33 @@ const farmerVideoReviews = [
 const Home = () => {
   const [activeVideo, setActiveVideo] = useState<{ url: string; title: string; farmer: string } | null>(null);
   const siteUrl = "https://chitracropscience.in";
+
+  useEffect(() => {
+    document.title = "Chitra Crop Science | Bio-Fertilizers, Biological Crop Defense and Plant Nutrition";
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement("meta");
+      metaDesc.setAttribute("name", "description");
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.setAttribute(
+      "content",
+      "Chitra Crop Science is an Indian agribusiness manufacturer founded by Jethu Dan. Specializing in bio-fertilizers, biological crop defense (CCS-303), and organic soil carbon (CCS-CARB ULTRA) across Gujarat, Rajasthan, and India."
+    );
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", "https://chitracropscience.in");
+  }, []);
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Chitra Crop Science",
-    description: "Advanced crop solutions for better growth and higher yield, including fertilizers, bio-stimulants, crop protection inputs, and farmer support for Indian agriculture.",
+    description: "Advanced crop solutions for better growth and higher yield, including bio-fertilizers, bio-stimulants, biological crop protection inputs, and farmer support for Indian agriculture.",
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
     telephone: "+91 80004 50380",
@@ -80,11 +102,11 @@ const Home = () => {
       postalCode: "380054",
       addressCountry: "IN"
     },
-    areaServed: ["IN", "Gujarat", "Rajasthan", "Maharashtra"],
+    areaServed: ["IN", "Gujarat", "Rajasthan", "Maharashtra", "Madhya Pradesh"],
     knowsAbout: [
-      "Fertilizers",
+      "Bio-Fertilizers",
       "Bio-stimulants",
-      "Crop protection",
+      "Biological Crop Protection",
       "Insecticides",
       "Fungicides",
       "Herbicides",
@@ -119,13 +141,14 @@ const Home = () => {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Advanced Crop Solutions for Better Growth & Higher Yield",
+    name: "Chitra Crop Science | Bio-Fertilizers, Biological Crop Defense and Plant Nutrition",
     url: siteUrl,
-    description: "Explore fertilizers, bio-stimulants, fungicides, herbicides, and insecticides for Indian agriculture with farmer-first technical support.",
+    description: "Explore bio-fertilizers, bio-stimulants, biological insecticides, fungicides, and organic soil conditioners for Indian agriculture with farmer-first agronomic support.",
     about: [
       "Crop protection products India",
-      "Fertilizers and bio-stimulants India",
-      "Advanced crop solutions",
+      "Bio-fertilizers and bio-stimulants India",
+      "Biological thrips and mites control",
+      "Organic carbon soil health",
       "Indian agriculture"
     ]
   };
@@ -242,16 +265,16 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-medium backdrop-blur-md text-emerald-300">
-              <span className="h-2 w-2 rounded-full bg-emerald-400"></span>
-              TRUSTED BY 5000+ FARMERS
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold backdrop-blur-md text-emerald-300 uppercase tracking-wider">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              Trusted by 5,000+ Progressive Farmers Across India
             </span>
-            <h1 className="mt-6 max-w-4xl mx-auto text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-              Advanced Crop Solutions for
-              <span className="block text-emerald-400 mt-2">Better Growth & Higher Yield</span>
+            <h1 className="mt-6 max-w-5xl mx-auto text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tight">
+              Scientific Crop Nutrition and Protection
+              <span className="block text-emerald-400 mt-2">Engineered for Bumper Yield and Soil Vitality</span>
             </h1>
-            <p className="mt-6 max-w-2xl mx-auto text-lg text-white/85">
-              Empowering Indian agriculture with high-grade fertilizers, bio-stimulants, and crop protection inputs.
+            <p className="mt-6 max-w-3xl mx-auto text-lg sm:text-xl text-white/90 leading-relaxed font-normal">
+              Empowering Indian agriculture under the leadership of Jethu Dan since 2008. From 100% biological pest defense (CCS-303) to organic soil carbon (CCS-CARB ULTRA), our field-tested bio-stimulants and plant nutrients deliver proven farm prosperity.
             </p>
             <div className="mt-10 flex flex-wrap gap-4 justify-center">
               <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-500/30">
@@ -269,12 +292,12 @@ const Home = () => {
       <section className="py-16 md:py-20 bg-white">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">Search by Use Case</p>
-            <h2 className="mt-2 text-3xl md:text-4xl font-bold text-slate-900">
-              Crop, Pest, Disease & Nutrition Search Paths
+            <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">Agronomy Search by Challenge</p>
+            <h2 className="mt-2 text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
+              Targeted Solutions for Crop Health, Pest Defense and Soil Nutrition
             </h2>
-            <p className="mt-4 text-slate-600">
-              Explore high-intent solution paths built for farmers, distributors, and agronomy-led crop planning.
+            <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-base sm:text-lg">
+              Explore agronomy-backed solution paths engineered for progressive farmers, agricultural dealers, and field agronomists.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -322,7 +345,7 @@ const Home = () => {
         <div className="container grid gap-8 md:grid-cols-3">
           {[
             { icon: ShieldCheck, title: "Quality Assured", desc: "Premium agrochemicals manufactured to highest standards" },
-            { icon: Sprout, title: "Field-Tested", desc: "Proven solutions on real farms across Gujarat & Rajasthan" },
+            { icon: Sprout, title: "Field-Tested", desc: "Proven solutions on real farms across Gujarat and Rajasthan" },
             { icon: Users, title: "Farmer Support", desc: "Expert agronomy advice and technical assistance" },
           ].map((f, i) => (
             <motion.div
@@ -447,7 +470,7 @@ const Home = () => {
           <div className="text-center mt-12">
             <Button asChild size="lg" className="rounded-full bg-emerald-700 hover:bg-emerald-800 text-white shadow-lg px-8">
               <Link to="/blog">
-                Explore All Farmer Stories & Reviews <ArrowRight className="ml-2 w-4 h-4" />
+                Explore All Farmer Stories and Reviews <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
           </div>
