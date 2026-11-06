@@ -42,42 +42,30 @@ export const resolveAsset = (path?: string | null): string => {
     return map[path];
   }
 
+  // If already full URL
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    return path;
+  }
+
   // Extract filename
-  let filename = path.split('/').pop() || '';
+  const filename = path.split('/').pop() || '';
+  if (!filename) {
+    return productFertilizer;
+  }
+
+  // Product images are stored in /assets/products/
+  if (path.includes('/products/') || path.includes('/images/products/')) {
+    return `/assets/products/${filename}`;
+  }
+
+  if (path.startsWith('/assets/')) {
+    return path;
+  }
+
+  if (filename.includes('.')) {
+    return `/assets/products/${filename}`;
+  }
+
   const normalized = normalizeFilename(filename);
-
-  // Possible directories in order of priority
-  const directories = [
-    '/images/products',
-    '/assets/products',
-    '/assets/media/products'
-  ];
-
-  // Possible extensions
-  const extensions = ['.jpeg', '.jpg', '.png', '.webp'];
-
-  // First try the exact filename as given
-  for (const dir of directories) {
-    if (path.startsWith(dir)) {
-      return path;
-    }
-  }
-
-  // If path is just a filename, try all combinations
-  for (const dir of directories) {
-    // Try with original filename
-    if (filename.includes('.')) {
-      return `${dir}/${filename}`;
-    }
-
-    // Try normalized filename
-    for (const ext of extensions) {
-      const testPath = `${dir}/${normalized}${ext}`;
-      // We'll return the first one we think might exist
-      return testPath;
-    }
-  }
-
-  // Fallback if all fails
-  return productFertilizer;
+  return `/assets/products/${normalized}.jpeg`;
 };
