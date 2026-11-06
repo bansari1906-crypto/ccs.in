@@ -1,7 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ShieldCheck, Sprout, Users, Droplets, Wheat, Sun, Leaf, Play, Star, MapPin, Video, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, ShieldCheck, Sprout, Users, Droplets, Wheat, Sun, Leaf, Play, Star, MapPin, Video, CheckCircle2, Sparkles, Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { SeoSchema } from "@/components/SeoSchema";
@@ -63,7 +63,26 @@ const farmerVideoReviews = [
 const Home = () => {
   const [activeVideo, setActiveVideo] = useState<{ url: string; title: string; farmer: string } | null>(null);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
+  const [isHeroMuted, setIsHeroMuted] = useState(true);
   const siteUrl = "https://chitracropscience.in";
+
+  const toggleHeroSound = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    if (video.muted) {
+      video.muted = false;
+      video.defaultMuted = false;
+      video.volume = 1.0;
+      setIsHeroMuted(false);
+      video.play().catch(() => {});
+    } else {
+      video.muted = true;
+      video.defaultMuted = true;
+      setIsHeroMuted(true);
+    }
+  };
 
   useEffect(() => {
     // 1. Mobile video background autoplay enforcer
@@ -286,7 +305,7 @@ const Home = () => {
       <SeoSchema type="FAQPage" data={faqSchema} />
 
       {/* Hero */}
-      <section className="relative isolate overflow-hidden min-h-[580px] md:min-h-[640px] flex items-center justify-center">
+      <section className="relative isolate overflow-hidden min-h-[580px] md:min-h-[660px] flex items-center justify-center">
         <video
           ref={heroVideoRef}
           autoPlay
@@ -294,25 +313,26 @@ const Home = () => {
           loop
           playsInline
           preload="auto"
-          poster="/assets/hero-farmer.jpg"
-          className="absolute inset-0 -z-10 h-full w-full object-cover pointer-events-none"
+          poster="/assets/media/poster-meeting.jpg"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
         >
-          <source src="/assets/media/hero-mobile.mp4" media="(max-width: 768px)" type="video/mp4" />
-          <source src="/assets/media/hero.mp4" type="video/mp4" />
+          <source src="/assets/media/final-mobile.mp4" media="(max-width: 768px)" type="video/mp4" />
+          <source src="/assets/media/final.mp4" type="video/mp4" />
           <source src="/media/final.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/75 via-black/55 to-black/75 pointer-events-none" />
-        <div className="container py-20 md:py-28 text-center">
+        {/* Subtle cinematic overlay to keep meeting video clearly visible while ensuring text readability */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/55 via-black/35 to-black/60 pointer-events-none" />
+        <div className="container py-20 md:py-28 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="max-w-3xl mx-auto"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight leading-[1.22]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight leading-[1.22] drop-shadow-md">
               Growing a Better Future Through Agricultural Innovation
             </h1>
-            <p className="mt-5 text-base sm:text-lg md:text-xl text-slate-200/95 leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="mt-5 text-base sm:text-lg md:text-xl text-slate-200/95 leading-relaxed font-normal max-w-2xl mx-auto drop-shadow">
               Science-driven agricultural solutions for healthier crops, stronger soils and sustainable farming.
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
@@ -324,6 +344,37 @@ const Home = () => {
               </Button>
             </div>
           </motion.div>
+        </div>
+
+        {/* Prominent Voice / Sound Control Pill */}
+        <div className="absolute bottom-5 right-5 sm:bottom-7 sm:right-7 z-20">
+          <button
+            type="button"
+            onClick={toggleHeroSound}
+            className={`group flex items-center gap-2.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-md border shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 ${
+              isHeroMuted
+                ? "bg-slate-900/85 hover:bg-slate-900 text-white border-emerald-500/40"
+                : "bg-emerald-600/95 hover:bg-emerald-600 text-white border-white/30 ring-2 ring-emerald-400/50"
+            }`}
+            aria-label={isHeroMuted ? "Unmute video with voice" : "Mute video sound"}
+            title={isHeroMuted ? "Tap to listen with sound/voice" : "Mute sound"}
+          >
+            {isHeroMuted ? (
+              <>
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <VolumeX className="w-4 h-4 text-emerald-400 transition-transform group-hover:scale-110" />
+                <span className="tracking-wide">Tap for Voice / Sound</span>
+              </>
+            ) : (
+              <>
+                <Volume2 className="w-4 h-4 text-white animate-bounce" />
+                <span className="tracking-wide">Voice Playing (Tap to Mute)</span>
+              </>
+            )}
+          </button>
         </div>
       </section>
 

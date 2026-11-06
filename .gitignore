@@ -23,6 +23,9 @@ public_html_BACKUP_*/
 !public_html/assets/media/*.mp4
 !assets/media/*.mp4
 !chitra-crop/public/assets/media/*.mp4
+!public_html/media/*.mp4
+!chitra-crop/public/media/*.mp4
+!media/*.mp4
 !public_html/video anime/ccs video new_gwr_video_mvp.mp4
 !chitra-crop/public/video anime/ccs video new_gwr_video_mvp.mp4
 !video anime/ccs video new_gwr_video_mvp.mp4
