@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ShieldCheck, Sprout, Users, Droplets, Wheat, Sun, Leaf, Play, Star, MapPin, Video, CheckCircle2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -62,9 +62,49 @@ const farmerVideoReviews = [
 
 const Home = () => {
   const [activeVideo, setActiveVideo] = useState<{ url: string; title: string; farmer: string } | null>(null);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
   const siteUrl = "https://chitracropscience.in";
 
   useEffect(() => {
+    // 1. Mobile video background autoplay enforcer
+    const video = heroVideoRef.current;
+    if (video) {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.setAttribute("muted", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "true");
+      video.setAttribute("x5-playsinline", "true");
+
+      const playVideo = () => {
+        const p = video.play();
+        if (p !== undefined) {
+          p.catch(() => {
+            // Autoplay blocked by mobile battery saver or power restriction: kickstart on first user interaction
+            const kickstartPlay = () => {
+              video.play().catch(() => {});
+              window.removeEventListener("touchstart", kickstartPlay);
+              window.removeEventListener("touchend", kickstartPlay);
+              window.removeEventListener("click", kickstartPlay);
+              window.removeEventListener("scroll", kickstartPlay);
+            };
+            window.addEventListener("touchstart", kickstartPlay, { passive: true, once: true });
+            window.addEventListener("touchend", kickstartPlay, { passive: true, once: true });
+            window.addEventListener("click", kickstartPlay, { passive: true, once: true });
+            window.addEventListener("scroll", kickstartPlay, { passive: true, once: true });
+          });
+        }
+      };
+
+      if (video.readyState >= 2) {
+        playVideo();
+      } else {
+        video.addEventListener("loadeddata", playVideo, { once: true });
+        video.addEventListener("canplay", playVideo, { once: true });
+      }
+    }
+
+    // 2. SEO & Meta description updater
     document.title = "Chitra Crop Science | Bio-Fertilizers, Biological Crop Defense and Plant Nutrition";
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
@@ -248,17 +288,20 @@ const Home = () => {
       {/* Hero */}
       <section className="relative isolate overflow-hidden min-h-[580px] md:min-h-[640px] flex items-center justify-center">
         <video
-          src="/media/final.mp4"
+          ref={heroVideoRef}
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
           poster="/assets/hero-farmer.jpg"
-          alt="Science-driven agricultural solutions for healthier crops and stronger soils"
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/75 via-black/55 to-black/75" />
+          className="absolute inset-0 -z-10 h-full w-full object-cover pointer-events-none"
+        >
+          <source src="/assets/media/hero-mobile.mp4" media="(max-width: 768px)" type="video/mp4" />
+          <source src="/assets/media/hero.mp4" type="video/mp4" />
+          <source src="/media/final.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/75 via-black/55 to-black/75 pointer-events-none" />
         <div className="container py-20 md:py-28 text-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
