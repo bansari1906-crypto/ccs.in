@@ -1,7 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ShieldCheck, Sprout, Users, Droplets, Wheat, Sun, Leaf, Play, Star, MapPin, Video, CheckCircle2, Sparkles, Volume2, VolumeX } from "lucide-react";
+import { ArrowRight, ShieldCheck, Sprout, Users, Droplets, Wheat, Sun, Leaf, Play, Star, MapPin, Video, CheckCircle2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { SeoSchema } from "@/components/SeoSchema";
@@ -63,26 +63,7 @@ const farmerVideoReviews = [
 const Home = () => {
   const [activeVideo, setActiveVideo] = useState<{ url: string; title: string; farmer: string } | null>(null);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
-  const [isHeroMuted, setIsHeroMuted] = useState(true);
   const siteUrl = "https://chitracropscience.in";
-
-  const toggleHeroSound = (e?: React.MouseEvent) => {
-    if (e) e.stopPropagation();
-    const video = heroVideoRef.current;
-    if (!video) return;
-
-    if (video.muted) {
-      video.muted = false;
-      video.defaultMuted = false;
-      video.volume = 1.0;
-      setIsHeroMuted(false);
-      video.play().catch(() => {});
-    } else {
-      video.muted = true;
-      video.defaultMuted = true;
-      setIsHeroMuted(true);
-    }
-  };
 
   useEffect(() => {
     // 1. Mobile video background autoplay enforcer
@@ -344,37 +325,6 @@ const Home = () => {
               </Button>
             </div>
           </motion.div>
-        </div>
-
-        {/* Prominent Voice / Sound Control Pill */}
-        <div className="absolute bottom-5 right-5 sm:bottom-7 sm:right-7 z-20">
-          <button
-            type="button"
-            onClick={toggleHeroSound}
-            className={`group flex items-center gap-2.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-md border shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 ${
-              isHeroMuted
-                ? "bg-slate-900/85 hover:bg-slate-900 text-white border-emerald-500/40"
-                : "bg-emerald-600/95 hover:bg-emerald-600 text-white border-white/30 ring-2 ring-emerald-400/50"
-            }`}
-            aria-label={isHeroMuted ? "Unmute video with voice" : "Mute video sound"}
-            title={isHeroMuted ? "Tap to listen with sound/voice" : "Mute sound"}
-          >
-            {isHeroMuted ? (
-              <>
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                </span>
-                <VolumeX className="w-4 h-4 text-emerald-400 transition-transform group-hover:scale-110" />
-                <span className="tracking-wide">Tap for Voice / Sound</span>
-              </>
-            ) : (
-              <>
-                <Volume2 className="w-4 h-4 text-white animate-bounce" />
-                <span className="tracking-wide">Voice Playing (Tap to Mute)</span>
-              </>
-            )}
-          </button>
         </div>
       </section>
 
